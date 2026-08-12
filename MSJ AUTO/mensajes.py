@@ -18,13 +18,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-PERFIL_CHROME = r"C:\Users\Christian Redes\AppData\Local\Google\Chrome\User Data\Persona 1"
+USER_DATA = r"C:\Users\Christian Redes\AppData\Local\Google\Chrome\User Data"
+PERFIL_CHROME = "Persona 1"
 GRUPO_NOMBRE = "Reparaciones MVSRL (Asignación y reporte de OM)"
 XPATH_BUSCADOR = '//*[@id="_r_a_"]'
-XPATH_MENSAJE = (
-    "/html/body/div[1]/div/div/div/div/div[3]/div/div[4]/div/footer/"
-    "div[1]/div/span/div/div/div/div[3]/div[1]/p"
-)
+XPATH_MENSAJE = "/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p"
 ARCHIVO_LOG = Path(__file__).with_name("mensajes.log")
 
 
@@ -52,7 +50,8 @@ def esperar_elemento_clickable(driver, selectores, timeout=30):
 def crear_driver():
     """Abre Chrome con el perfil que ya tiene iniciada la sesión de WhatsApp."""
     opciones = webdriver.ChromeOptions()
-    opciones.add_argument(f"user-data-dir={PERFIL_CHROME}")
+    opciones.add_argument(f"--user-data-dir={USER_DATA}")
+    opciones.add_argument(f"--profile-directory={PERFIL_CHROME}")
     opciones.add_argument("--start-maximized")
     opciones.add_argument("--disable-blink-features=AutomationControlled")
     opciones.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -190,8 +189,8 @@ def enviar_mensaje_1():
             "- Mantengan orden y comunicación constante durante la ejecución de la tarea.",
             "- La seguridad es responsabilidad individual y colectiva: cada uno debe cuidarse a sí mismo y a sus compañeros.",
             "¡Trabajemos seguros, la prevención salva vidas!",
-            "Recordatorio Automático: Solo serán registradas en el sistema Pegasus las entradas de los equipos que ingresen físicamente al taller (ejemplos: amoladoras, mini amoladoras, equipos de soldar).",
-            "- Aquellos equipos que no ingresen físicamente al taller deberán ser registrados en la página de mantenimiento vía formulario de solicitud de mantenimiento (ejemplos: sierra taladro, arco sumergido, puente grúa, reparación de luces, reparación de tomas).",
+            "Recordatorio Automático: Las solicitudes de mantenimiento ya no seran  registradas en el sistema Pegasus.",
+            "- Todos los equipos y servicios solicitados a mantenimiento deberán ser registrados en la página de mantenimiento vía formulario de solicitud de mantenimiento.",
             "- Todos los miembros del área de mantenimiento están habilitados para realizar solicitudes y efectuar el cierre correspondiente.",
             "- Todos los materiales e insumos utilizados por el departamento serán retirados del depósito correspondiente a la OT 25611 (Depósito de Gastos de Mantenimiento).",
             "- Es requisito obligatorio que todos los insumos y materiales estén previamente habilitados.",

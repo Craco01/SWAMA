@@ -152,6 +152,36 @@ def enviar_texto(driver, grupo, mensaje):
         print("Error enviando mensaje:", e)
         return False
 
+def obtener_contacto_valido(datos):
+    """Devuelve el contacto local si tiene un formato paraguayo válido."""
+    contacto = next(
+        (valor for clave, valor in datos.items() if clave.lower() == "contacto"),
+        ""
+    )
+    contacto = str(contacto).strip()
+    numero = "".join(caracter for caracter in contacto if caracter.isdigit())
+
+    if len(numero) == 9 and numero.startswith(("96", "97", "98", "99")):
+        return numero
+    return None
+
+def enviar_texto_contacto(driver, numero, mensaje):
+    try:
+        # Abre el chat directamente en WhatsApp Web, sin pasar por wa.me ni la app.
+        driver.get(f"https://web.whatsapp.com/send?phone=595{numero}")
+
+        message_box = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'))
+        )
+        message_box.click()
+        message_box.send_keys(mensaje)
+        message_box.send_keys(Keys.ENTER)
+        time.sleep(0.5)
+        return True
+    except Exception as e:
+        print(f"Error enviando mensaje a 595{numero}:", e)
+        return False
+
 def mencionar(message_box, nombre):
     corto = nombre.split()[0]
     message_box.send_keys("@")
@@ -250,7 +280,9 @@ def procesar_waom(driver):
             prioridad = datos.get("Prioridad", "").strip()
             mensaje = f" ❌ Solicitud de mantenimiento ID: *{id_}* registrada para *{equipo}* con prioridad *{prioridad}*, (Motivo de la solicitud << *{averia}* >>),Solicitado por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*."
             if enviar_texto(driver, GRUPO_DEFECTO_1, mensaje):
-                shutil.move(ruta, os.path.join(reportado, archivo))
+                contacto = obtener_contacto_valido(datos)
+                if not contacto or enviar_texto_contacto(driver, contacto, mensaje):
+                    shutil.move(ruta, os.path.join(reportado, archivo))
             time.sleep(3)
         except Exception as e:
             print("Error WAOM fase 2:", e)
@@ -339,7 +371,9 @@ def procesar_waom2(driver):
                 msg = f"❌ *{equipo}*: Reparación *{id_}* registrada, solicitada por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*, Motivo de la solicitud *{averia}*."
 
             if enviar_texto(driver, GRUPO_DEFECTO_2, msg):
-                shutil.move(ruta, os.path.join(reportado, archivo))
+                contacto = obtener_contacto_valido(datos)
+                if not contacto or enviar_texto_contacto(driver, contacto, msg):
+                    shutil.move(ruta, os.path.join(reportado, archivo))
             time.sleep(3)
         except Exception as e:
             print("Error WAOM2 fase 2:", e)
