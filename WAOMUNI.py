@@ -32,6 +32,7 @@ USER_DATA = r"C:\Users\Christian Redes\AppData\Local\Google\Chrome\User Data\Per
 grupo_ids = {
     "Taller": "Taller Reporte Reparaciones",
     "Accesorios": "Accesorios Reporte Reparaciones",
+    "Armado": "Armado Reporte Reparaciones",
     "Armado 1": "Armado Reporte Reparaciones",
     "Armado 2": "Armado Reporte Reparaciones",
     "Corte": "Maquinado Reporte Reparaciones",
