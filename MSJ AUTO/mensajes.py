@@ -20,11 +20,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 PERFIL_CHROME = r"C:\Users\Christian Redes\AppData\Local\Google\Chrome\User Data\Persona 1"
 GRUPO_NOMBRE = "Reparaciones MVSRL (Asignación y reporte de OM)"
-XPATH_BUSCADOR = '//*[@id="_r_a_"]'
-XPATH_MENSAJE = (
-    "/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p"
-    "/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p"
-)
+XPATH_BUSCADOR = '/html/body/div[2]/div/div/div/div/div[3]/div/div[3]/div/div[1]/div[1]/div/div/div/div/div/div[2]/input'
+XPATH_RESULTADO_GRUPO = '//span[@title="{grupo}"]'
+XPATH_MENSAJE = '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'
+XPATH_BOTON_CONTINUAR = '//a[contains(@href,"web.whatsapp.com/send")]'
 ARCHIVO_LOG = Path(__file__).with_name("mensajes.log")
 
 
@@ -35,22 +34,11 @@ def registrar(texto):
         archivo.write(f"[{marca_tiempo}] {texto}\n")
 
 
-def esperar_elemento_clickable(driver, selectores, timeout=30):
-    """Prueba selectores actuales y anteriores de WhatsApp Web."""
-    espera_por_selector = max(3, timeout // len(selectores))
-    ultimo_error = None
-
-    for selector in selectores:
-        try:
-            return WebDriverWait(driver, espera_por_selector).until(
-                EC.element_to_be_clickable((By.XPATH, selector))
-            )
-        except Exception as error:
-            ultimo_error = error
-
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
+def esperar_elemento_clickable(driver, xpath, timeout=30):
+    """Espera un elemento de WhatsApp Web usando su XPath completo."""
+    return WebDriverWait(driver, timeout).until(
+        EC.element_to_be_clickable((By.XPATH, xpath))
+    )
 
 
 def crear_driver():
@@ -87,11 +75,7 @@ def crear_driver():
 def abrir_grupo(driver):
     buscador = esperar_elemento_clickable(
         driver,
-        [
-            XPATH_BUSCADOR,
-            '//div[@contenteditable="true" and @data-tab="3"]',
-            '//div[@role="textbox" and @contenteditable="true" and not(ancestor::footer)]',
-        ]
+        XPATH_BUSCADOR
     )
 
     buscador.click()
@@ -103,7 +87,7 @@ def abrir_grupo(driver):
 
     resultados = driver.find_elements(
         By.XPATH,
-        f'//span[@title="{GRUPO_NOMBRE}"]'
+        XPATH_RESULTADO_GRUPO.format(grupo=GRUPO_NOMBRE)
     )
 
     if resultados:
@@ -121,12 +105,7 @@ def abrir_grupo(driver):
 def caja_mensaje(driver):
     return esperar_elemento_clickable(
         driver,
-        [
-            XPATH_MENSAJE,
-            '//footer//*[@contenteditable="true" and @role="textbox"]',
-            '//footer//*[@contenteditable="true"]',
-            '//div[@contenteditable="true" and @data-tab="10"]',
-        ]
+        XPATH_MENSAJE
     )
 
 
@@ -176,7 +155,7 @@ def enviar_directo(driver, numero, texto):
             EC.element_to_be_clickable(
                 (
                     By.XPATH,
-                    '//a[contains(@href,"web.whatsapp.com/send")]'
+                    XPATH_BOTON_CONTINUAR
                 )
             )
         )

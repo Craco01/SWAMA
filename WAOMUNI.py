@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 import time
+import unicodedata
 from datetime import datetime
 
 from selenium import webdriver
@@ -26,6 +27,9 @@ RUTAS = {
 
 #CHROMEDRIVER = r'C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\chromedriver\win64-133.0.6943.53\chromedriver-win64\chromedriver.exe'
 USER_DATA = r"C:\Users\Christian Redes\AppData\Local\Google\Chrome\User Data\Persona 1"
+XPATH_BUSCADOR = '/html/body/div[2]/div/div/div/div/div[3]/div/div[3]/div/div[1]/div[1]/div/div/div/div/div/div[2]/input'
+XPATH_RESULTADO_GRUPO = '//span[@title="{grupo}"]'
+XPATH_MENSAJE = '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'
 
 # ================= GRUPOS =================
 
@@ -122,26 +126,47 @@ def iniciar_driver():
 
     return driver
 
+def obtener_caja_mensaje(driver):
+    return WebDriverWait(driver, 30).until(
+        EC.element_to_be_clickable((By.XPATH, XPATH_MENSAJE))
+    )
+
+def numero_no_disponible(driver):
+    texto = driver.find_element(By.TAG_NAME, "body").text.lower()
+    texto = unicodedata.normalize("NFKD", texto)
+    texto = "".join(caracter for caracter in texto if not unicodedata.combining(caracter))
+
+    aviso_es = "numero de telefono" in texto and any(
+        frase in texto
+        for frase in ("no es valido", "no esta disponible", "no esta registrado")
+    )
+    aviso_en = "phone number" in texto and any(
+        frase in texto
+        for frase in ("is invalid", "is not available", "isn't on whatsapp")
+    )
+    return aviso_es or aviso_en
+
 def enviar_texto(driver, grupo, mensaje):
     try:
         # Buscar grupo
         search_box = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@id="_r_a_"]'))
+            EC.element_to_be_clickable((By.XPATH, XPATH_BUSCADOR))
         )
         search_box.click()
         search_box.clear()
         search_box.send_keys(grupo)
         time.sleep(2)
 
-        resultados = driver.find_elements(By.XPATH, f'//span[@title="{grupo}"]')
+        resultados = driver.find_elements(
+            By.XPATH,
+            XPATH_RESULTADO_GRUPO.format(grupo=grupo)
+        )
         if resultados:
             resultados[0].click()
             time.sleep(1)
 
         # Caja de mensaje
-        message_box = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'))
-        )
+        message_box = obtener_caja_mensaje(driver)
         message_box.click()
         message_box.send_keys(mensaje)
 
@@ -171,9 +196,28 @@ def enviar_texto_contacto(driver, numero, mensaje):
         # Abre el chat directamente en WhatsApp Web, sin pasar por wa.me ni la app.
         driver.get(f"https://web.whatsapp.com/send?phone=595{numero}")
 
-        message_box = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'))
-        )
+        def chat_disponible_o_invalido(pagina):
+            return numero_no_disponible(pagina) or pagina.find_elements(
+                By.XPATH,
+                XPATH_MENSAJE
+            )
+
+        try:
+            WebDriverWait(driver, 10).until(chat_disponible_o_invalido)
+        except Exception:
+            print(f"Sin respuesta para 595{numero}; refrescando WhatsApp Web.")
+            driver.refresh()
+            try:
+                WebDriverWait(driver, 10).until(chat_disponible_o_invalido)
+            except Exception:
+                print(f"Contacto 595{numero} omitido: WhatsApp no respondió.")
+                return True
+
+        if numero_no_disponible(driver):
+            print(f"Contacto 595{numero} omitido: no tiene WhatsApp.")
+            return True
+
+        message_box = obtener_caja_mensaje(driver)
         message_box.click()
         message_box.send_keys(mensaje)
         message_box.send_keys(Keys.ENTER)
@@ -198,22 +242,23 @@ def enviar_con_menciones(driver, grupo, datos):
     try:
         # Buscar grupo
         search_box = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@id="_r_a_"]'))
+            EC.element_to_be_clickable((By.XPATH, XPATH_BUSCADOR))
         )
         search_box.click()
         search_box.clear()
         search_box.send_keys(grupo)
         time.sleep(2)
 
-        resultados = driver.find_elements(By.XPATH, f'//span[@title="{grupo}"]')
+        resultados = driver.find_elements(
+            By.XPATH,
+            XPATH_RESULTADO_GRUPO.format(grupo=grupo)
+        )
         if resultados:
             resultados[0].click()
             time.sleep(1)
 
         # Caja de mensaje
-        message_box = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'))
-        )
+        message_box = obtener_caja_mensaje(driver)
         message_box.click()
 
         message_box.send_keys(
