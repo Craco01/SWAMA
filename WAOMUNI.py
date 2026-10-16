@@ -318,18 +318,54 @@ def procesar_waom(driver):
 def procesar_waom3(driver):
     carpeta = RUTAS["WAOM3"]
     reportado = os.path.join(carpeta, "Reportado")
+    en_proceso = os.path.join(carpeta, "EnProceso")
+    duplicados = os.path.join(carpeta, "Duplicados")
     os.makedirs(reportado, exist_ok=True)
+    os.makedirs(en_proceso, exist_ok=True)
     archivos = [f for f in os.listdir(carpeta) if f.endswith(".json")]
+
     for archivo in archivos:
         ruta = os.path.join(carpeta, archivo)
+        ruta_proceso = os.path.join(en_proceso, archivo)
+        ruta_reportado = os.path.join(reportado, archivo)
         try:
-            with open(ruta, encoding='utf-8') as f:
+            if os.path.exists(ruta_reportado):
+                os.makedirs(duplicados, exist_ok=True)
+                destino_duplicado = os.path.join(duplicados, archivo)
+                if os.path.exists(destino_duplicado):
+                    nombre, extension = os.path.splitext(archivo)
+                    marca_tiempo = datetime.now().strftime("%Y%m%d%H%M%S%f")
+                    destino_duplicado = os.path.join(
+                        duplicados, f"{nombre}_{marca_tiempo}{extension}"
+                    )
+                shutil.move(ruta, destino_duplicado)
+                print(f"WAOM3 omitido: {archivo} ya figura en Reportado.")
+                continue
+
+            os.rename(ruta, ruta_proceso)
+        except FileNotFoundError:
+            continue
+        except FileExistsError:
+            print(f"WAOM3 omitido: {archivo} ya está en proceso.")
+            continue
+
+        try:
+            with open(ruta_proceso, encoding='utf-8') as f:
                 datos = json.load(f)
             if enviar_con_menciones(driver, GRUPO_DEFECTO_1, datos):
-                shutil.move(ruta, os.path.join(reportado, archivo))
+                shutil.move(ruta_proceso, ruta_reportado)
+            else:
+                print(
+                    f"WAOM3 requiere revisión: {archivo} permanece en "
+                    f"{en_proceso}; no se reintentará automáticamente."
+                )
             time.sleep(3)
         except Exception as e:
             print("Error WAOM3:", e)
+            print(
+                f"El archivo {archivo} permanece en {en_proceso} "
+                "para evitar un reenvío automático."
+            )
 
 def procesar_waom2(driver):
     carpeta = RUTAS["WAOM2"]
@@ -337,6 +373,27 @@ def procesar_waom2(driver):
     reportado = os.path.join(carpeta, "Reportado")
     os.makedirs(prereportado, exist_ok=True)
     os.makedirs(reportado, exist_ok=True)
+
+    ids_waom_enviados = set()
+    for estado in ("Prereportado", "Reportado"):
+        waom_estado = os.path.join(RUTAS["WAOM"], estado)
+        if not os.path.isdir(waom_estado):
+            continue
+        for archivo in os.listdir(waom_estado):
+            if not archivo.endswith(".json"):
+                continue
+            ruta_waom = os.path.join(waom_estado, archivo)
+            try:
+                with open(ruta_waom, encoding='utf-8') as f:
+                    datos_waom = json.load(f)
+                id_waom = str(datos_waom.get("ID", "")).strip()
+                if id_waom:
+                    ids_waom_enviados.add(id_waom)
+            except (OSError, json.JSONDecodeError) as e:
+                print(
+                    f"Error leyendo {ruta_waom} para evitar duplicados WAOM2:",
+                    e
+                )
 
     archivos = [f for f in os.listdir(carpeta) if f.endswith(".json")]
 
@@ -361,6 +418,13 @@ def procesar_waom2(driver):
             elif progreso == "Reprogramado":
                 msg = f"⚠️ *{equipo}*: Reparación *{id_}* reprogramada, solicitada por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*, Motivo de la solicitud *{averia}*."
             else:
+                if id_ in ids_waom_enviados:
+                    shutil.move(ruta, os.path.join(reportado, archivo))
+                    print(
+                        f"WAOM2 omitido: el registro de la solicitud {id_} "
+                        "ya fue enviado por WAOM."
+                    )
+                    continue
                 msg = f"❌ *{equipo}*: Reparación *{id_}* registrada, solicitada por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*, Motivo de la solicitud *{averia}*."
 
             grupo = grupo_ids.get(sector, GRUPO_DEFECTO_2)
@@ -394,6 +458,13 @@ def procesar_waom2(driver):
             elif progreso == "Reprogramado":
                 msg = f"⚠️ *{equipo}*: Reparación *{id_}* reprogramada, solicitada por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*, Motivo de la solicitud *{averia}*."
             else:
+                if id_ in ids_waom_enviados:
+                    shutil.move(ruta, os.path.join(reportado, archivo))
+                    print(
+                        f"WAOM2 omitido: el registro de la solicitud {id_} "
+                        "ya fue enviado por WAOM."
+                    )
+                    continue
                 msg = f"❌ *{equipo}*: Reparación *{id_}* registrada, solicitada por *{solicitante}* del sector *{sector}* el *{fecha_formateada}*, Motivo de la solicitud *{averia}*."
 
             if enviar_texto(driver, GRUPO_DEFECTO_2, msg):

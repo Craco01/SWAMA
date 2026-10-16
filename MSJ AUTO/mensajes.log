@@ -1,688 +1,924 @@
-[2026-09-02 11:57:59] Inicio de la automatización.
-[2026-09-02 11:58:17] Mensaje(s) enviado(s) correctamente.
-[2026-09-02 11:58:20] Navegador cerrado.
-[2026-09-02 12:57:02] Inicio de la automatización.
-[2026-09-02 12:57:24] Mensaje(s) enviado(s) correctamente.
-[2026-09-02 12:57:27] Navegador cerrado.
-[2026-09-02 16:45:02] Inicio de la automatización.
-[2026-09-02 16:45:59] Mensaje(s) enviado(s) correctamente.
-[2026-09-02 16:46:02] Navegador cerrado.
-[2026-09-02 17:00:02] Inicio de la automatización.
-[2026-09-02 17:00:18] Mensaje(s) enviado(s) correctamente.
-[2026-09-02 17:00:20] Navegador cerrado.
-[2026-09-03 06:55:02] Inicio de la automatización.
-[2026-09-03 06:56:09] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 06:56:11] Navegador cerrado.
-[2026-09-03 07:10:02] Inicio de la automatización.
-[2026-09-03 07:10:51] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 07:10:54] Navegador cerrado.
-[2026-09-03 11:57:59] Inicio de la automatización.
-[2026-09-03 11:58:25] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 11:58:28] Navegador cerrado.
-[2026-09-03 12:57:02] Inicio de la automatización.
-[2026-09-03 12:57:25] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 12:57:28] Navegador cerrado.
-[2026-09-03 16:45:03] Inicio de la automatización.
-[2026-09-03 16:46:05] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 16:46:08] Navegador cerrado.
-[2026-09-03 17:00:03] Inicio de la automatización.
-[2026-09-03 17:00:31] Mensaje(s) enviado(s) correctamente.
-[2026-09-03 17:00:34] Navegador cerrado.
-[2026-09-04 06:55:02] Inicio de la automatización.
-[2026-09-04 06:56:12] Mensaje(s) enviado(s) correctamente.
-[2026-09-04 06:56:15] Navegador cerrado.
-[2026-09-04 07:10:02] Inicio de la automatización.
-[2026-09-04 07:11:02] Mensaje(s) enviado(s) correctamente.
-[2026-09-04 07:11:04] Navegador cerrado.
-[2026-09-04 11:57:59] Inicio de la automatización.
-[2026-09-04 11:58:16] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
+[2026-10-05 11:58:00] Inicio de la automatización.
+[2026-10-05 11:58:17] Mensaje(s) enviado(s) correctamente.
+[2026-10-05 11:58:20] Navegador cerrado.
+[2026-10-05 12:57:02] Inicio de la automatización.
+[2026-10-05 12:57:42] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 320, in <lambda>
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
     abrir_grupo(driver),
     ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 107, in abrir_grupo
-    resultados[0].click()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 114, in click
-    self._execute(Command.CLICK_ELEMENT)
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 508, in _execute
-    return self._parent.execute(command, params)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x10015f3+4de3]
+	chromedriver!(No symbol) [0xf158e4]
+	chromedriver!(No symbol) [0xd4c270]
+	chromedriver!(No symbol) [0xd97336]
+	chromedriver!(No symbol) [0xd9750b]
+	chromedriver!(No symbol) [0xddbf12]
+	chromedriver!(No symbol) [0xdb9dc4]
+	chromedriver!(No symbol) [0xdd9783]
+	chromedriver!(No symbol) [0xdb9b16]
+	chromedriver!(No symbol) [0xd8c13a]
+	chromedriver!(No symbol) [0xd8ce14]
+	chromedriver!GetHandleVerifier [0x1499fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x14ba71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x113cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x1144df3+1485e3]
+	chromedriver!(No symbol) [0xf23cb8]
+	chromedriver!(No symbol) [0xf1ed38]
+	chromedriver!(No symbol) [0xf1eee5]
+	chromedriver!(No symbol) [0xf0b227]
+	KERNEL32!BaseThreadInitThunk [0x7725fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776282ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7762827e+ee]
+
+
+[2026-10-05 12:57:44] Navegador cerrado.
+[2026-10-05 16:45:02] Inicio de la automatización.
+[2026-10-05 16:45:43] Mensaje(s) enviado(s) correctamente.
+[2026-10-05 16:45:45] Navegador cerrado.
+[2026-10-05 17:00:02] Inicio de la automatización.
+[2026-10-05 17:00:41] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x10b15f3+4de3]
+	chromedriver!(No symbol) [0xfc58e4]
+	chromedriver!(No symbol) [0xdfc270]
+	chromedriver!(No symbol) [0xe47336]
+	chromedriver!(No symbol) [0xe4750b]
+	chromedriver!(No symbol) [0xe8bf12]
+	chromedriver!(No symbol) [0xe69dc4]
+	chromedriver!(No symbol) [0xe89783]
+	chromedriver!(No symbol) [0xe69b16]
+	chromedriver!(No symbol) [0xe3c13a]
+	chromedriver!(No symbol) [0xe3ce14]
+	chromedriver!GetHandleVerifier [0x1549fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x156a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x11ecb02+1402f2]
+	chromedriver!GetHandleVerifier [0x11f4df3+1485e3]
+	chromedriver!(No symbol) [0xfd3cb8]
+	chromedriver!(No symbol) [0xfced38]
+	chromedriver!(No symbol) [0xfceee5]
+	chromedriver!(No symbol) [0xfbb227]
+	KERNEL32!BaseThreadInitThunk [0x7725fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776282ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7762827e+ee]
+
+
+[2026-10-05 17:00:44] Navegador cerrado.
+[2026-10-06 06:55:02] Inicio de la automatización.
+[2026-10-06 06:55:40] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x12b15f3+4de3]
+	chromedriver!(No symbol) [0x11c58e4]
+	chromedriver!(No symbol) [0xffc270]
+	chromedriver!(No symbol) [0x1047336]
+	chromedriver!(No symbol) [0x104750b]
+	chromedriver!(No symbol) [0x108bf12]
+	chromedriver!(No symbol) [0x1069dc4]
+	chromedriver!(No symbol) [0x1089783]
+	chromedriver!(No symbol) [0x1069b16]
+	chromedriver!(No symbol) [0x103c13a]
+	chromedriver!(No symbol) [0x103ce14]
+	chromedriver!GetHandleVerifier [0x1749fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x176a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x13ecb02+1402f2]
+	chromedriver!GetHandleVerifier [0x13f4df3+1485e3]
+	chromedriver!(No symbol) [0x11d3cb8]
+	chromedriver!(No symbol) [0x11ced38]
+	chromedriver!(No symbol) [0x11ceee5]
+	chromedriver!(No symbol) [0x11bb227]
+	KERNEL32!BaseThreadInitThunk [0x7725fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776282ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7762827e+ee]
+
+
+[2026-10-06 06:55:42] Navegador cerrado.
+[2026-10-06 07:10:01] Inicio de la automatización.
+[2026-10-06 07:11:02] Mensaje(s) enviado(s) correctamente.
+[2026-10-06 07:11:05] Navegador cerrado.
+[2026-10-06 11:58:00] Inicio de la automatización.
+[2026-10-06 11:58:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-06 11:58:21] Navegador cerrado.
+[2026-10-06 12:57:02] Inicio de la automatización.
+[2026-10-06 12:57:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-06 12:57:20] Navegador cerrado.
+[2026-10-07 06:55:02] Inicio de la automatización.
+[2026-10-07 06:56:11] Mensaje(s) enviado(s) correctamente.
+[2026-10-07 06:56:14] Navegador cerrado.
+[2026-10-07 07:10:02] Inicio de la automatización.
+[2026-10-07 07:11:05] Mensaje(s) enviado(s) correctamente.
+[2026-10-07 07:11:08] Navegador cerrado.
+[2026-10-07 11:58:01] Inicio de la automatización.
+[2026-10-07 11:58:21] Mensaje(s) enviado(s) correctamente.
+[2026-10-07 11:58:24] Navegador cerrado.
+[2026-10-07 12:57:03] Inicio de la automatización.
+[2026-10-07 12:57:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-07 12:57:21] Navegador cerrado.
+[2026-10-07 16:45:03] Inicio de la automatización.
+[2026-10-07 16:45:53] Mensaje(s) enviado(s) correctamente.
+[2026-10-07 16:45:55] Navegador cerrado.
+[2026-10-07 17:00:03] Inicio de la automatización.
+[2026-10-07 17:00:42] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xb315f3+4de3]
+	chromedriver!(No symbol) [0xa458e4]
+	chromedriver!(No symbol) [0x87c270]
+	chromedriver!(No symbol) [0x8c7336]
+	chromedriver!(No symbol) [0x8c750b]
+	chromedriver!(No symbol) [0x90bf12]
+	chromedriver!(No symbol) [0x8e9dc4]
+	chromedriver!(No symbol) [0x909783]
+	chromedriver!(No symbol) [0x8e9b16]
+	chromedriver!(No symbol) [0x8bc13a]
+	chromedriver!(No symbol) [0x8bce14]
+	chromedriver!GetHandleVerifier [0xfc9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xfea71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xc6cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xc74df3+1485e3]
+	chromedriver!(No symbol) [0xa53cb8]
+	chromedriver!(No symbol) [0xa4ed38]
+	chromedriver!(No symbol) [0xa4eee5]
+	chromedriver!(No symbol) [0xa3b227]
+	KERNEL32!BaseThreadInitThunk [0x7725fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776282ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7762827e+ee]
+
+
+[2026-10-07 17:00:46] Navegador cerrado.
+[2026-10-08 06:55:02] Inicio de la automatización.
+[2026-10-08 06:56:14] Mensaje(s) enviado(s) correctamente.
+[2026-10-08 06:56:17] Navegador cerrado.
+[2026-10-08 07:10:03] Inicio de la automatización.
+[2026-10-08 07:10:43] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd415f3+4de3]
+	chromedriver!(No symbol) [0xc558e4]
+	chromedriver!(No symbol) [0xa8c270]
+	chromedriver!(No symbol) [0xad7336]
+	chromedriver!(No symbol) [0xad750b]
+	chromedriver!(No symbol) [0xb1bf12]
+	chromedriver!(No symbol) [0xaf9dc4]
+	chromedriver!(No symbol) [0xb19783]
+	chromedriver!(No symbol) [0xaf9b16]
+	chromedriver!(No symbol) [0xacc13a]
+	chromedriver!(No symbol) [0xacce14]
+	chromedriver!GetHandleVerifier [0x11d9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x11fa71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xe7cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xe84df3+1485e3]
+	chromedriver!(No symbol) [0xc63cb8]
+	chromedriver!(No symbol) [0xc5ed38]
+	chromedriver!(No symbol) [0xc5eee5]
+	chromedriver!(No symbol) [0xc4b227]
+	KERNEL32!BaseThreadInitThunk [0x7623fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee827e+ee]
+
+
+[2026-10-08 07:10:46] Navegador cerrado.
+[2026-10-08 11:57:59] Inicio de la automatización.
+[2026-10-08 11:58:14] Mensaje(s) enviado(s) correctamente.
+[2026-10-08 11:58:17] Navegador cerrado.
+[2026-10-08 12:57:02] Inicio de la automatización.
+[2026-10-08 12:57:41] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd115f3+4de3]
+	chromedriver!(No symbol) [0xc258e4]
+	chromedriver!(No symbol) [0xa5c270]
+	chromedriver!(No symbol) [0xaa7336]
+	chromedriver!(No symbol) [0xaa750b]
+	chromedriver!(No symbol) [0xaebf12]
+	chromedriver!(No symbol) [0xac9dc4]
+	chromedriver!(No symbol) [0xae9783]
+	chromedriver!(No symbol) [0xac9b16]
+	chromedriver!(No symbol) [0xa9c13a]
+	chromedriver!(No symbol) [0xa9ce14]
+	chromedriver!GetHandleVerifier [0x11a9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x11ca71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xe4cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xe54df3+1485e3]
+	chromedriver!(No symbol) [0xc33cb8]
+	chromedriver!(No symbol) [0xc2ed38]
+	chromedriver!(No symbol) [0xc2eee5]
+	chromedriver!(No symbol) [0xc1b227]
+	KERNEL32!BaseThreadInitThunk [0x7623fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee827e+ee]
+
+
+[2026-10-08 12:57:44] Navegador cerrado.
+[2026-10-08 16:45:02] Inicio de la automatización.
+[2026-10-08 16:45:46] Mensaje(s) enviado(s) correctamente.
+[2026-10-08 16:45:49] Navegador cerrado.
+[2026-10-08 17:00:03] Inicio de la automatización.
+[2026-10-08 17:00:48] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xf715f3+4de3]
+	chromedriver!(No symbol) [0xe858e4]
+	chromedriver!(No symbol) [0xcbc270]
+	chromedriver!(No symbol) [0xd07336]
+	chromedriver!(No symbol) [0xd0750b]
+	chromedriver!(No symbol) [0xd4bf12]
+	chromedriver!(No symbol) [0xd29dc4]
+	chromedriver!(No symbol) [0xd49783]
+	chromedriver!(No symbol) [0xd29b16]
+	chromedriver!(No symbol) [0xcfc13a]
+	chromedriver!(No symbol) [0xcfce14]
+	chromedriver!GetHandleVerifier [0x1409fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x142a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x10acb02+1402f2]
+	chromedriver!GetHandleVerifier [0x10b4df3+1485e3]
+	chromedriver!(No symbol) [0xe93cb8]
+	chromedriver!(No symbol) [0xe8ed38]
+	chromedriver!(No symbol) [0xe8eee5]
+	chromedriver!(No symbol) [0xe7b227]
+	KERNEL32!BaseThreadInitThunk [0x7623fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76ee827e+ee]
+
+
+[2026-10-08 17:00:51] Navegador cerrado.
+[2026-10-09 06:55:02] Inicio de la automatización.
+[2026-10-09 06:56:11] Mensaje(s) enviado(s) correctamente.
+[2026-10-09 06:56:14] Navegador cerrado.
+[2026-10-09 07:10:02] Inicio de la automatización.
+[2026-10-09 07:10:43] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x10b15f3+4de3]
+	chromedriver!(No symbol) [0xfc58e4]
+	chromedriver!(No symbol) [0xdfc270]
+	chromedriver!(No symbol) [0xe47336]
+	chromedriver!(No symbol) [0xe4750b]
+	chromedriver!(No symbol) [0xe8bf12]
+	chromedriver!(No symbol) [0xe69dc4]
+	chromedriver!(No symbol) [0xe89783]
+	chromedriver!(No symbol) [0xe69b16]
+	chromedriver!(No symbol) [0xe3c13a]
+	chromedriver!(No symbol) [0xe3ce14]
+	chromedriver!GetHandleVerifier [0x1549fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x156a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x11ecb02+1402f2]
+	chromedriver!GetHandleVerifier [0x11f4df3+1485e3]
+	chromedriver!(No symbol) [0xfd3cb8]
+	chromedriver!(No symbol) [0xfced38]
+	chromedriver!(No symbol) [0xfceee5]
+	chromedriver!(No symbol) [0xfbb227]
+	KERNEL32!BaseThreadInitThunk [0x7577fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b827e+ee]
+
+
+[2026-10-09 07:10:46] Navegador cerrado.
+[2026-10-09 11:57:59] Inicio de la automatización.
+[2026-10-09 11:58:39] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 302, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xeb15f3+4de3]
+	chromedriver!(No symbol) [0xdc58e4]
+	chromedriver!(No symbol) [0xbfc270]
+	chromedriver!(No symbol) [0xc47336]
+	chromedriver!(No symbol) [0xc4750b]
+	chromedriver!(No symbol) [0xc8bf12]
+	chromedriver!(No symbol) [0xc69dc4]
+	chromedriver!(No symbol) [0xc89783]
+	chromedriver!(No symbol) [0xc69b16]
+	chromedriver!(No symbol) [0xc3c13a]
+	chromedriver!(No symbol) [0xc3ce14]
+	chromedriver!GetHandleVerifier [0x1349fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x136a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xfecb02+1402f2]
+	chromedriver!GetHandleVerifier [0xff4df3+1485e3]
+	chromedriver!(No symbol) [0xdd3cb8]
+	chromedriver!(No symbol) [0xdced38]
+	chromedriver!(No symbol) [0xdceee5]
+	chromedriver!(No symbol) [0xdbb227]
+	KERNEL32!BaseThreadInitThunk [0x7577fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b827e+ee]
+
+
+[2026-10-09 11:58:42] Navegador cerrado.
+[2026-10-09 12:57:02] Inicio de la automatización.
+[2026-10-09 12:57:20] Mensaje(s) enviado(s) correctamente.
+[2026-10-09 12:57:24] Navegador cerrado.
+[2026-10-09 16:45:01] Inicio de la automatización.
+[2026-10-09 16:45:40] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x9315f3+4de3]
+	chromedriver!(No symbol) [0x8458e4]
+	chromedriver!(No symbol) [0x67c270]
+	chromedriver!(No symbol) [0x6c7336]
+	chromedriver!(No symbol) [0x6c750b]
+	chromedriver!(No symbol) [0x70bf12]
+	chromedriver!(No symbol) [0x6e9dc4]
+	chromedriver!(No symbol) [0x709783]
+	chromedriver!(No symbol) [0x6e9b16]
+	chromedriver!(No symbol) [0x6bc13a]
+	chromedriver!(No symbol) [0x6bce14]
+	chromedriver!GetHandleVerifier [0xdc9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xdea71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xa6cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xa74df3+1485e3]
+	chromedriver!(No symbol) [0x853cb8]
+	chromedriver!(No symbol) [0x84ed38]
+	chromedriver!(No symbol) [0x84eee5]
+	chromedriver!(No symbol) [0x83b227]
+	KERNEL32!BaseThreadInitThunk [0x7577fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b827e+ee]
+
+
+[2026-10-09 16:45:42] Navegador cerrado.
+[2026-10-09 17:00:03] Inicio de la automatización.
+[2026-10-09 17:00:56] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x9315f3+4de3]
+	chromedriver!(No symbol) [0x8458e4]
+	chromedriver!(No symbol) [0x67c270]
+	chromedriver!(No symbol) [0x6c7336]
+	chromedriver!(No symbol) [0x6c750b]
+	chromedriver!(No symbol) [0x70bf12]
+	chromedriver!(No symbol) [0x6e9dc4]
+	chromedriver!(No symbol) [0x709783]
+	chromedriver!(No symbol) [0x6e9b16]
+	chromedriver!(No symbol) [0x6bc13a]
+	chromedriver!(No symbol) [0x6bce14]
+	chromedriver!GetHandleVerifier [0xdc9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xdea71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xa6cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xa74df3+1485e3]
+	chromedriver!(No symbol) [0x853cb8]
+	chromedriver!(No symbol) [0x84ed38]
+	chromedriver!(No symbol) [0x84eee5]
+	chromedriver!(No symbol) [0x83b227]
+	KERNEL32!BaseThreadInitThunk [0x7577fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b827e+ee]
+
+
+[2026-10-09 17:00:59] Navegador cerrado.
+[2026-10-10 06:55:03] Inicio de la automatización.
+[2026-10-10 06:56:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-10 06:56:21] Navegador cerrado.
+[2026-10-10 07:10:03] Inicio de la automatización.
+[2026-10-10 07:10:43] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x13915f3+4de3]
+	chromedriver!(No symbol) [0x12a58e4]
+	chromedriver!(No symbol) [0x10dc270]
+	chromedriver!(No symbol) [0x1127336]
+	chromedriver!(No symbol) [0x112750b]
+	chromedriver!(No symbol) [0x116bf12]
+	chromedriver!(No symbol) [0x1149dc4]
+	chromedriver!(No symbol) [0x1169783]
+	chromedriver!(No symbol) [0x1149b16]
+	chromedriver!(No symbol) [0x111c13a]
+	chromedriver!(No symbol) [0x111ce14]
+	chromedriver!GetHandleVerifier [0x1829fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x184a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x14ccb02+1402f2]
+	chromedriver!GetHandleVerifier [0x14d4df3+1485e3]
+	chromedriver!(No symbol) [0x12b3cb8]
+	chromedriver!(No symbol) [0x12aed38]
+	chromedriver!(No symbol) [0x12aeee5]
+	chromedriver!(No symbol) [0x129b227]
+	KERNEL32!BaseThreadInitThunk [0x7577fcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b82ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x770b827e+ee]
+
+
+[2026-10-10 07:10:46] Navegador cerrado.
+[2026-10-10 07:30:02] Inicio de la automatización.
+[2026-10-10 07:31:06] Mensaje(s) enviado(s) correctamente.
+[2026-10-10 07:31:12] Navegador cerrado.
+[2026-10-10 11:57:59] Inicio de la automatización.
+[2026-10-10 11:58:16] Mensaje(s) enviado(s) correctamente.
+[2026-10-10 11:58:19] Navegador cerrado.
+[2026-10-12 06:55:58] Inicio de la automatización.
+[2026-10-12 06:56:47] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 291, in accion
+    enviar_texto(driver, mensaje)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 113, in enviar_texto
+    caja = caja_mensaje(driver)
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 106, in caja_mensaje
+    return esperar_elemento_clickable(
+        driver,
+        XPATH_MENSAJE
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 112, in until
+    value = method(self._driver)
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 514, in _predicate
+    target = driver.find_element(*target)  # grab element at locator
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 823, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 450, in execute
     self.error_handler.check_response(response)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
   File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <span dir="auto" title="Reparaciones MVSRL (Asignación y reporte de OM)" class="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i xnpuxes" style="min-height: 0px;">...</span> is not clickable at point (281, 230). Other element would receive the click: <div class="x9f619 x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf xvue9z x1xy6bms x64bnmy xx6bls6 x13jy36j x16w0wmm x6ikm8r x10wlt62 x1xn7y0n x1uxb8k9 x1vmbcc8 x16xm01d xs2e80n" data-animate-modal-popup="true" data-testid="confirm-popup" style="opacity: 1; transform: scaleX(1) scaleY(1);">...</div>
-  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=154.0.8037.98); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x491863+4fe3]
-	chromedriver!(No symbol) [0x3f1694]
-	chromedriver!(No symbol) [0x28bf90]
-	chromedriver!(No symbol) [0x2dbf08]
-	chromedriver!(No symbol) [0x2da599]
-	chromedriver!(No symbol) [0x2d8375]
-	chromedriver!(No symbol) [0x2d7584]
-	chromedriver!(No symbol) [0x2cce7a]
-	chromedriver!(No symbol) [0x2f85cc]
-	chromedriver!(No symbol) [0x2cc8b4]
-	chromedriver!(No symbol) [0x2f8794]
-	chromedriver!(No symbol) [0x31631f]
-	chromedriver!(No symbol) [0x2f8366]
-	chromedriver!(No symbol) [0x2cb4a9]
-	chromedriver!(No symbol) [0x2cc1b4]
-	chromedriver!GetHandleVerifier [0x816a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x83d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x55f272+d29f2]
-	chromedriver!GetHandleVerifier [0x565263+d89e3]
-	chromedriver!(No symbol) [0x3fc54d]
-	chromedriver!(No symbol) [0x3f9358]
-	chromedriver!(No symbol) [0x3f9505]
-	chromedriver!(No symbol) [0x3e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7756fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a382ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a3827e+ee]
+	chromedriver!GetHandleVerifier [0x9015f3+4de3]
+	chromedriver!(No symbol) [0x8158e4]
+	chromedriver!(No symbol) [0x64c270]
+	chromedriver!(No symbol) [0x63b4ae]
+	chromedriver!(No symbol) [0x659ce9]
+	chromedriver!(No symbol) [0x6c0bcc]
+	chromedriver!(No symbol) [0x6d91c9]
+	chromedriver!(No symbol) [0x6b9b16]
+	chromedriver!(No symbol) [0x68c13a]
+	chromedriver!(No symbol) [0x68ce14]
+	chromedriver!GetHandleVerifier [0xd99fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xdba71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xa3cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xa44df3+1485e3]
+	chromedriver!(No symbol) [0x823cb8]
+	chromedriver!(No symbol) [0x81ed38]
+	chromedriver!(No symbol) [0x81eee5]
+	chromedriver!(No symbol) [0x80b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-[2026-09-04 11:58:19] Navegador cerrado.
-[2026-09-04 12:57:02] Inicio de la automatización.
-[2026-09-04 12:57:28] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
+[2026-10-12 06:56:49] Navegador cerrado.
+[2026-10-12 07:10:02] Inicio de la automatización.
+[2026-10-12 07:11:10] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 334, in <lambda>
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 376, in accion
+    enviar_directo(
+    ~~~~~~~~~~~~~~^
+        driver,
+        ^^^^^^^
+        "595982090279",
+        ^^^^^^^^^^^^^^^
+        "Recordatorio Automático: Realizar registro de los *horómetros de equipos de Maquinado*, asignado a Ronald Caceres."
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 171, in enviar_directo
+    enviar_texto(driver, texto)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 113, in enviar_texto
+    caja = caja_mensaje(driver)
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 106, in caja_mensaje
+    return esperar_elemento_clickable(
+        driver,
+        XPATH_MENSAJE
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x9015f3+4de3]
+	chromedriver!(No symbol) [0x8158e4]
+	chromedriver!(No symbol) [0x64c270]
+	chromedriver!(No symbol) [0x697336]
+	chromedriver!(No symbol) [0x69750b]
+	chromedriver!(No symbol) [0x6dbf12]
+	chromedriver!(No symbol) [0x6b9dc4]
+	chromedriver!(No symbol) [0x6d9783]
+	chromedriver!(No symbol) [0x6b9b16]
+	chromedriver!(No symbol) [0x68c13a]
+	chromedriver!(No symbol) [0x68ce14]
+	chromedriver!GetHandleVerifier [0xd99fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xdba71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xa3cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xa44df3+1485e3]
+	chromedriver!(No symbol) [0x823cb8]
+	chromedriver!(No symbol) [0x81ed38]
+	chromedriver!(No symbol) [0x81eee5]
+	chromedriver!(No symbol) [0x80b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
+
+
+[2026-10-12 07:11:19] Navegador cerrado.
+[2026-10-12 07:23:06] Inicio de la automatización.
+[2026-10-12 07:23:51] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x8215f3+4de3]
+	chromedriver!(No symbol) [0x7358e4]
+	chromedriver!(No symbol) [0x56c270]
+	chromedriver!(No symbol) [0x5b7336]
+	chromedriver!(No symbol) [0x5b750b]
+	chromedriver!(No symbol) [0x5fbf12]
+	chromedriver!(No symbol) [0x5d9dc4]
+	chromedriver!(No symbol) [0x5f9783]
+	chromedriver!(No symbol) [0x5d9b16]
+	chromedriver!(No symbol) [0x5ac13a]
+	chromedriver!(No symbol) [0x5ace14]
+	chromedriver!GetHandleVerifier [0xcb9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xcda71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x95cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x964df3+1485e3]
+	chromedriver!(No symbol) [0x743cb8]
+	chromedriver!(No symbol) [0x73ed38]
+	chromedriver!(No symbol) [0x73eee5]
+	chromedriver!(No symbol) [0x72b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
+
+
+[2026-10-12 07:23:54] Navegador cerrado.
+[2026-10-12 07:24:13] Inicio de la automatización.
+[2026-10-12 07:25:24] Mensaje(s) enviado(s) correctamente.
+[2026-10-12 07:25:27] Navegador cerrado.
+[2026-10-12 11:57:59] Inicio de la automatización.
+[2026-10-12 11:58:37] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 302, in <lambda>
     abrir_grupo(driver),
     ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 107, in abrir_grupo
-    resultados[0].click()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 114, in click
-    self._execute(Command.CLICK_ELEMENT)
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 508, in _execute
-    return self._parent.execute(command, params)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 450, in execute
-    self.error_handler.check_response(response)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <span dir="auto" title="Reparaciones MVSRL (Asignación y reporte de OM)" class="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i xnpuxes" style="min-height: 0px;">...</span> is not clickable at point (281, 230). Other element would receive the click: <div class="x9f619 x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf xvue9z x1xy6bms x64bnmy xx6bls6 x13jy36j x16w0wmm x6ikm8r x10wlt62 x1xn7y0n x1uxb8k9 x1vmbcc8 x16xm01d xs2e80n" data-animate-modal-popup="true" data-testid="confirm-popup" style="opacity: 1; transform: scaleX(1) scaleY(1);">...</div>
-  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x491863+4fe3]
-	chromedriver!(No symbol) [0x3f1694]
-	chromedriver!(No symbol) [0x28bf90]
-	chromedriver!(No symbol) [0x2dbf08]
-	chromedriver!(No symbol) [0x2da599]
-	chromedriver!(No symbol) [0x2d8375]
-	chromedriver!(No symbol) [0x2d7584]
-	chromedriver!(No symbol) [0x2cce7a]
-	chromedriver!(No symbol) [0x2f85cc]
-	chromedriver!(No symbol) [0x2cc8b4]
-	chromedriver!(No symbol) [0x2f8794]
-	chromedriver!(No symbol) [0x31631f]
-	chromedriver!(No symbol) [0x2f8366]
-	chromedriver!(No symbol) [0x2cb4a9]
-	chromedriver!(No symbol) [0x2cc1b4]
-	chromedriver!GetHandleVerifier [0x816a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x83d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x55f272+d29f2]
-	chromedriver!GetHandleVerifier [0x565263+d89e3]
-	chromedriver!(No symbol) [0x3fc54d]
-	chromedriver!(No symbol) [0x3f9358]
-	chromedriver!(No symbol) [0x3f9505]
-	chromedriver!(No symbol) [0x3e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7756fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a382ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a3827e+ee]
+	chromedriver!GetHandleVerifier [0x5515f3+4de3]
+	chromedriver!(No symbol) [0x4658e4]
+	chromedriver!(No symbol) [0x29c270]
+	chromedriver!(No symbol) [0x2e7336]
+	chromedriver!(No symbol) [0x2e750b]
+	chromedriver!(No symbol) [0x32bf12]
+	chromedriver!(No symbol) [0x309dc4]
+	chromedriver!(No symbol) [0x329783]
+	chromedriver!(No symbol) [0x309b16]
+	chromedriver!(No symbol) [0x2dc13a]
+	chromedriver!(No symbol) [0x2dce14]
+	chromedriver!GetHandleVerifier [0x9e9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xa0a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x68cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x694df3+1485e3]
+	chromedriver!(No symbol) [0x473cb8]
+	chromedriver!(No symbol) [0x46ed38]
+	chromedriver!(No symbol) [0x46eee5]
+	chromedriver!(No symbol) [0x45b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-[2026-09-04 12:57:37] Navegador cerrado.
-[2026-09-04 16:45:02] Inicio de la automatización.
-[2026-09-04 16:45:18] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
+[2026-10-12 11:58:40] Navegador cerrado.
+[2026-10-12 12:57:02] Inicio de la automatización.
+[2026-10-12 12:57:58] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 384, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 107, in abrir_grupo
-    resultados[0].click()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 114, in click
-    self._execute(Command.CLICK_ELEMENT)
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 508, in _execute
-    return self._parent.execute(command, params)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 450, in execute
-    self.error_handler.check_response(response)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <span dir="auto" title="Reparaciones MVSRL (Asignación y reporte de OM)" class="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i xnpuxes" style="min-height: 0px;">...</span> is not clickable at point (281, 230). Other element would receive the click: <div class="x9f619 x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf xvue9z x1xy6bms x64bnmy xx6bls6 x13jy36j x16w0wmm x6ikm8r x10wlt62 x1xn7y0n x1uxb8k9 x1vmbcc8 x16xm01d xs2e80n" data-animate-modal-popup="true" data-testid="confirm-popup" style="opacity: 1; transform: scaleX(1) scaleY(1);">...</div>
-  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x461863+4fe3]
-	chromedriver!(No symbol) [0x3c1694]
-	chromedriver!(No symbol) [0x25bf90]
-	chromedriver!(No symbol) [0x2abf08]
-	chromedriver!(No symbol) [0x2aa599]
-	chromedriver!(No symbol) [0x2a8375]
-	chromedriver!(No symbol) [0x2a7584]
-	chromedriver!(No symbol) [0x29ce7a]
-	chromedriver!(No symbol) [0x2c85cc]
-	chromedriver!(No symbol) [0x29c8b4]
-	chromedriver!(No symbol) [0x2c8794]
-	chromedriver!(No symbol) [0x2e631f]
-	chromedriver!(No symbol) [0x2c8366]
-	chromedriver!(No symbol) [0x29b4a9]
-	chromedriver!(No symbol) [0x29c1b4]
-	chromedriver!GetHandleVerifier [0x7e6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x80d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x52f272+d29f2]
-	chromedriver!GetHandleVerifier [0x535263+d89e3]
-	chromedriver!(No symbol) [0x3cc54d]
-	chromedriver!(No symbol) [0x3c9358]
-	chromedriver!(No symbol) [0x3c9505]
-	chromedriver!(No symbol) [0x3b87a7]
-	KERNEL32!BaseThreadInitThunk [0x7756fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a382ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a3827e+ee]
-	(No symbol) [(nil)]
-
-
-[2026-09-04 16:45:21] Navegador cerrado.
-[2026-09-04 17:00:02] Inicio de la automatización.
-[2026-09-04 17:00:18] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 348, in <lambda>
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
     abrir_grupo(driver),
     ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 107, in abrir_grupo
-    resultados[0].click()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 114, in click
-    self._execute(Command.CLICK_ELEMENT)
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 508, in _execute
-    return self._parent.execute(command, params)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 450, in execute
-    self.error_handler.check_response(response)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <span dir="auto" title="Reparaciones MVSRL (Asignación y reporte de OM)" class="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i xnpuxes" style="min-height: 0px;">...</span> is not clickable at point (281, 230). Other element would receive the click: <div class="x9f619 x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf xvue9z x1xy6bms x64bnmy xx6bls6 x13jy36j x16w0wmm x6ikm8r x10wlt62 x1xn7y0n x1uxb8k9 x1vmbcc8 x16xm01d xs2e80n" data-animate-modal-popup="true" data-testid="confirm-popup" style="opacity: 1; transform: scaleX(1) scaleY(1);">...</div>
-  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x461863+4fe3]
-	chromedriver!(No symbol) [0x3c1694]
-	chromedriver!(No symbol) [0x25bf90]
-	chromedriver!(No symbol) [0x2abf08]
-	chromedriver!(No symbol) [0x2aa599]
-	chromedriver!(No symbol) [0x2a8375]
-	chromedriver!(No symbol) [0x2a7584]
-	chromedriver!(No symbol) [0x29ce7a]
-	chromedriver!(No symbol) [0x2c85cc]
-	chromedriver!(No symbol) [0x29c8b4]
-	chromedriver!(No symbol) [0x2c8794]
-	chromedriver!(No symbol) [0x2e631f]
-	chromedriver!(No symbol) [0x2c8366]
-	chromedriver!(No symbol) [0x29b4a9]
-	chromedriver!(No symbol) [0x29c1b4]
-	chromedriver!GetHandleVerifier [0x7e6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x80d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x52f272+d29f2]
-	chromedriver!GetHandleVerifier [0x535263+d89e3]
-	chromedriver!(No symbol) [0x3cc54d]
-	chromedriver!(No symbol) [0x3c9358]
-	chromedriver!(No symbol) [0x3c9505]
-	chromedriver!(No symbol) [0x3b87a7]
-	KERNEL32!BaseThreadInitThunk [0x7756fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a382ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77a3827e+ee]
-	(No symbol) [(nil)]
-
-
-[2026-09-04 17:00:21] Navegador cerrado.
-[2026-09-05 06:55:02] Inicio de la automatización.
-[2026-09-05 06:59:30] Mensaje(s) enviado(s) correctamente.
-[2026-09-05 06:59:33] Navegador cerrado.
-[2026-09-05 07:10:03] Inicio de la automatización.
-[2026-09-05 07:11:02] Mensaje(s) enviado(s) correctamente.
-[2026-09-05 07:11:05] Navegador cerrado.
-[2026-09-05 07:30:01] Inicio de la automatización.
-[2026-09-05 07:30:53] Mensaje(s) enviado(s) correctamente.
-[2026-09-05 07:30:58] Navegador cerrado.
-[2026-09-05 11:57:59] Inicio de la automatización.
-[2026-09-05 11:58:16] Mensaje(s) enviado(s) correctamente.
-[2026-09-05 11:58:19] Navegador cerrado.
-[2026-09-07 06:55:03] Inicio de la automatización.
-[2026-09-07 06:55:45] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
   File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+	chromedriver!GetHandleVerifier [0xf915f3+4de3]
+	chromedriver!(No symbol) [0xea58e4]
+	chromedriver!(No symbol) [0xcdc270]
+	chromedriver!(No symbol) [0xd27336]
+	chromedriver!(No symbol) [0xd2750b]
+	chromedriver!(No symbol) [0xd6bf12]
+	chromedriver!(No symbol) [0xd49dc4]
+	chromedriver!(No symbol) [0xd69783]
+	chromedriver!(No symbol) [0xd49b16]
+	chromedriver!(No symbol) [0xd1c13a]
+	chromedriver!(No symbol) [0xd1ce14]
+	chromedriver!GetHandleVerifier [0x1429fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x144a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x10ccb02+1402f2]
+	chromedriver!GetHandleVerifier [0x10d4df3+1485e3]
+	chromedriver!(No symbol) [0xeb3cb8]
+	chromedriver!(No symbol) [0xeaed38]
+	chromedriver!(No symbol) [0xeaeee5]
+	chromedriver!(No symbol) [0xe9b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 06:55:48] Navegador cerrado.
-[2026-09-07 06:57:43] Inicio de la automatización.
-[2026-09-07 06:58:23] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 06:58:26] Navegador cerrado.
-[2026-09-07 06:58:29] Inicio de la automatización.
-[2026-09-07 06:59:07] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 06:59:10] Navegador cerrado.
-[2026-09-07 06:59:11] Inicio de la automatización.
-[2026-09-07 06:59:50] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 06:59:52] Navegador cerrado.
-[2026-09-07 06:59:57] Inicio de la automatización.
-[2026-09-07 07:00:39] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 07:00:41] Navegador cerrado.
-[2026-09-07 07:00:44] Inicio de la automatización.
-[2026-09-07 07:01:24] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 239, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 07:01:28] Navegador cerrado.
-[2026-09-07 07:02:21] Inicio de la automatización.
-[2026-09-07 07:03:00] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 42, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 320, in <lambda>
-    abrir_grupo(driver),
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 85, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-    ...<4 lines>...
-        ]
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 48, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
-
-[2026-09-07 07:03:06] Navegador cerrado.
-[2026-09-07 07:09:49] Inicio de la automatización.
-[2026-09-07 07:10:02] Inicio de la automatización.
-[2026-09-07 07:10:12] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 205, in ejecutar_automatizacion
+[2026-10-12 12:58:01] Navegador cerrado.
+[2026-10-12 16:45:02] Inicio de la automatización.
+[2026-10-12 16:45:14] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 185, in ejecutar_automatizacion
     driver = crear_driver()
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 79, in crear_driver
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 59, in crear_driver
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=opciones
@@ -718,104 +954,147 @@ selenium.common.exceptions.SessionNotCreatedException: Message: session not crea
   (session not created: DevToolsActivePort file doesn't exist)
   (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3c2a11]
-	chromedriver!(No symbol) [0x3bda50]
-	chromedriver!(No symbol) [0x4045ef]
-	chromedriver!(No symbol) [0x403e07]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+	chromedriver!GetHandleVerifier [0x12d15f3+4de3]
+	chromedriver!(No symbol) [0x11e58e4]
+	chromedriver!(No symbol) [0x101c270]
+	chromedriver!(No symbol) [0x105483e]
+	chromedriver!(No symbol) [0x104e68d]
+	chromedriver!(No symbol) [0x1096550]
+	chromedriver!(No symbol) [0x1095d57]
+	chromedriver!(No symbol) [0x1089b16]
+	chromedriver!(No symbol) [0x105c13a]
+	chromedriver!(No symbol) [0x105ce14]
+	chromedriver!GetHandleVerifier [0x1769fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x178a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x140cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x1414df3+1485e3]
+	chromedriver!(No symbol) [0x11f3cb8]
+	chromedriver!(No symbol) [0x11eed38]
+	chromedriver!(No symbol) [0x11eeee5]
+	chromedriver!(No symbol) [0x11db227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-[2026-09-07 07:10:12] Navegador cerrado.
-[2026-09-07 07:10:28] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 53, in esperar_elemento_clickable
-    return WebDriverWait(driver, espera_por_selector).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, selector))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 207, in ejecutar_automatizacion
+[2026-10-12 16:45:14] Navegador cerrado.
+[2026-10-12 17:00:03] Inicio de la automatización.
+[2026-10-12 17:00:49] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 241, in accion
-    abrir_grupo(driver)
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
     ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 96, in abrir_grupo
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
         driver,
-        (XPATH_BUSCADOR, *XPATH_BUSCADOR_ALTERNATIVOS)
+        XPATH_BUSCADOR
     )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 59, in esperar_elemento_clickable
-    raise RuntimeError(
-        "WhatsApp Web no mostró el campo esperado."
-    ) from ultimo_error
-RuntimeError: WhatsApp Web no mostró el campo esperado.
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x8615f3+4de3]
+	chromedriver!(No symbol) [0x7758e4]
+	chromedriver!(No symbol) [0x5ac270]
+	chromedriver!(No symbol) [0x5f7336]
+	chromedriver!(No symbol) [0x5f750b]
+	chromedriver!(No symbol) [0x63bf12]
+	chromedriver!(No symbol) [0x619dc4]
+	chromedriver!(No symbol) [0x639783]
+	chromedriver!(No symbol) [0x619b16]
+	chromedriver!(No symbol) [0x5ec13a]
+	chromedriver!(No symbol) [0x5ece14]
+	chromedriver!GetHandleVerifier [0xcf9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xd1a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x99cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x9a4df3+1485e3]
+	chromedriver!(No symbol) [0x783cb8]
+	chromedriver!(No symbol) [0x77ed38]
+	chromedriver!(No symbol) [0x77eee5]
+	chromedriver!(No symbol) [0x76b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
-[2026-09-07 07:10:31] Navegador cerrado.
-[2026-09-07 07:12:10] Inicio de la automatización.
-[2026-09-07 07:16:34] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 07:16:36] Navegador cerrado.
-[2026-09-07 07:23:33] Inicio de la automatización.
-[2026-09-07 07:24:24] ERROR: Traceback (most recent call last):
+
+[2026-10-12 17:00:52] Navegador cerrado.
+[2026-10-13 06:55:03] Inicio de la automatización.
+[2026-10-13 06:55:41] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 303, in <lambda>
-    enviar_texto(
-    ~~~~~~~~~~~~^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
         driver,
-        ^^^^^^^
-        "Recordatorio Automático: Inicio del horario de descanso, no olviden marcar."
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7415f3+4de3]
+	chromedriver!(No symbol) [0x6558e4]
+	chromedriver!(No symbol) [0x48c270]
+	chromedriver!(No symbol) [0x4d7336]
+	chromedriver!(No symbol) [0x4d750b]
+	chromedriver!(No symbol) [0x51bf12]
+	chromedriver!(No symbol) [0x4f9dc4]
+	chromedriver!(No symbol) [0x519783]
+	chromedriver!(No symbol) [0x4f9b16]
+	chromedriver!(No symbol) [0x4cc13a]
+	chromedriver!(No symbol) [0x4cce14]
+	chromedriver!GetHandleVerifier [0xbd9fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xbfa71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x87cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x884df3+1485e3]
+	chromedriver!(No symbol) [0x663cb8]
+	chromedriver!(No symbol) [0x65ed38]
+	chromedriver!(No symbol) [0x65eee5]
+	chromedriver!(No symbol) [0x64b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
+
+
+[2026-10-13 06:55:44] Navegador cerrado.
+[2026-10-13 07:10:02] Inicio de la automatización.
+[2026-10-13 07:11:39] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 376, in accion
+    enviar_directo(
+    ~~~~~~~~~~~~~~^
+        driver,
+        ^^^^^^^
+        "595982090279",
+        ^^^^^^^^^^^^^^^
+        "Recordatorio Automático: Realizar registro de los *horómetros de equipos de Maquinado*, asignado a Ronald Caceres."
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 171, in enviar_directo
+    enviar_texto(driver, texto)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 113, in enviar_texto
     caja = caja_mensaje(driver)
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 106, in caja_mensaje
@@ -834,122 +1113,39 @@ RuntimeError: WhatsApp Web no mostró el campo esperado.
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+	chromedriver!GetHandleVerifier [0xd915f3+4de3]
+	chromedriver!(No symbol) [0xca58e4]
+	chromedriver!(No symbol) [0xadc270]
+	chromedriver!(No symbol) [0xb27336]
+	chromedriver!(No symbol) [0xb2750b]
+	chromedriver!(No symbol) [0xb6bf12]
+	chromedriver!(No symbol) [0xb49dc4]
+	chromedriver!(No symbol) [0xb69783]
+	chromedriver!(No symbol) [0xb49b16]
+	chromedriver!(No symbol) [0xb1c13a]
+	chromedriver!(No symbol) [0xb1ce14]
+	chromedriver!GetHandleVerifier [0x1229fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x124a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xeccb02+1402f2]
+	chromedriver!GetHandleVerifier [0xed4df3+1485e3]
+	chromedriver!(No symbol) [0xcb3cb8]
+	chromedriver!(No symbol) [0xcaed38]
+	chromedriver!(No symbol) [0xcaeee5]
+	chromedriver!(No symbol) [0xc9b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-[2026-09-07 07:24:27] Navegador cerrado.
-[2026-09-07 07:25:34] Inicio de la automatización.
-[2026-09-07 07:25:51] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 07:25:54] Navegador cerrado.
-[2026-09-07 07:26:17] Inicio de la automatización.
-[2026-09-07 07:26:17] Inicio de la automatización.
-[2026-09-07 07:26:45] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 331, in <lambda>
-    enviar_texto(
-    ~~~~~~~~~~~~^
-        driver,
-        ^^^^^^^
-        "Recordatorio Automático: Hora de limpiar y ordenar el taller, por favor todos los presentes."
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 113, in enviar_texto
-    caja = caja_mensaje(driver)
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 106, in caja_mensaje
-    return esperar_elemento_clickable(
-        driver,
-        XPATH_MENSAJE
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 112, in until
-    value = method(self._driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 515, in _predicate
-    element = visibility_of(target)(driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 208, in _predicate
-    return _element_if_visible(element)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 223, in _element_if_visible
-    return element if element.is_displayed() == visibility else False
-                      ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'is_displayed'
-
-[2026-09-07 07:26:45] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 331, in <lambda>
-    enviar_texto(
-    ~~~~~~~~~~~~^
-        driver,
-        ^^^^^^^
-        "Recordatorio Automático: Hora de limpiar y ordenar el taller, por favor todos los presentes."
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 113, in enviar_texto
-    caja = caja_mensaje(driver)
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 106, in caja_mensaje
-    return esperar_elemento_clickable(
-        driver,
-        XPATH_MENSAJE
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 112, in until
-    value = method(self._driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 515, in _predicate
-    element = visibility_of(target)(driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 208, in _predicate
-    return _element_if_visible(element)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 223, in _element_if_visible
-    return element if element.is_displayed() == visibility else False
-                      ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'is_displayed'
-
-[2026-09-07 07:26:47] Navegador cerrado.
-[2026-09-07 07:26:48] Navegador cerrado.
-[2026-09-07 07:26:50] Inicio de la automatización.
-[2026-09-07 07:27:08] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 07:27:10] Navegador cerrado.
-[2026-09-07 07:27:14] Inicio de la automatización.
-[2026-09-07 07:27:55] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 07:27:58] Navegador cerrado.
-[2026-09-07 07:28:54] Inicio de la automatización.
-[2026-09-07 07:29:33] ERROR: Traceback (most recent call last):
+[2026-10-13 07:11:43] Navegador cerrado.
+[2026-10-13 11:57:59] Inicio de la automatización.
+[2026-10-13 11:58:19] Mensaje(s) enviado(s) correctamente.
+[2026-10-13 11:58:22] Navegador cerrado.
+[2026-10-13 13:02:40] Inicio de la automatización.
+[2026-10-13 13:10:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-13 13:10:21] Navegador cerrado.
+[2026-10-13 16:45:02] Inicio de la automatización.
+[2026-10-13 16:45:42] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
@@ -972,36 +1168,88 @@ AttributeError: 'NoneType' object has no attribute 'is_displayed'
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+	chromedriver!GetHandleVerifier [0x9015f3+4de3]
+	chromedriver!(No symbol) [0x8158e4]
+	chromedriver!(No symbol) [0x64c270]
+	chromedriver!(No symbol) [0x697336]
+	chromedriver!(No symbol) [0x69750b]
+	chromedriver!(No symbol) [0x6dbf12]
+	chromedriver!(No symbol) [0x6b9dc4]
+	chromedriver!(No symbol) [0x6d9783]
+	chromedriver!(No symbol) [0x6b9b16]
+	chromedriver!(No symbol) [0x68c13a]
+	chromedriver!(No symbol) [0x68ce14]
+	chromedriver!GetHandleVerifier [0xd99fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0xdba71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0xa3cb02+1402f2]
+	chromedriver!GetHandleVerifier [0xa44df3+1485e3]
+	chromedriver!(No symbol) [0x823cb8]
+	chromedriver!(No symbol) [0x81ed38]
+	chromedriver!(No symbol) [0x81eee5]
+	chromedriver!(No symbol) [0x80b227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
 
 
-[2026-09-07 07:29:35] Navegador cerrado.
-[2026-09-07 07:31:31] Inicio de la automatización.
-[2026-09-07 07:32:13] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 07:32:16] Navegador cerrado.
-[2026-09-07 11:58:00] Inicio de la automatización.
-[2026-09-07 11:58:37] ERROR: Traceback (most recent call last):
+[2026-10-13 16:45:44] Navegador cerrado.
+[2026-10-13 17:00:10] Inicio de la automatización.
+[2026-10-13 17:01:11] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x10e15f3+4de3]
+	chromedriver!(No symbol) [0xff58e4]
+	chromedriver!(No symbol) [0xe2c270]
+	chromedriver!(No symbol) [0xe77336]
+	chromedriver!(No symbol) [0xe7750b]
+	chromedriver!(No symbol) [0xebbf12]
+	chromedriver!(No symbol) [0xe99dc4]
+	chromedriver!(No symbol) [0xeb9783]
+	chromedriver!(No symbol) [0xe99b16]
+	chromedriver!(No symbol) [0xe6c13a]
+	chromedriver!(No symbol) [0xe6ce14]
+	chromedriver!GetHandleVerifier [0x1579fb4+49d7a4]
+	chromedriver!GetHandleVerifier [0x159a71b+4bdf0b]
+	chromedriver!GetHandleVerifier [0x121cb02+1402f2]
+	chromedriver!GetHandleVerifier [0x1224df3+1485e3]
+	chromedriver!(No symbol) [0x1003cb8]
+	chromedriver!(No symbol) [0xffed38]
+	chromedriver!(No symbol) [0xffeee5]
+	chromedriver!(No symbol) [0xfeb227]
+	KERNEL32!BaseThreadInitThunk [0x75ebfcc9+19]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x776082ae+11e]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7760827e+ee]
+
+
+[2026-10-13 17:01:13] Navegador cerrado.
+[2026-10-14 06:55:03] Inicio de la automatización.
+[2026-10-14 06:56:13] Mensaje(s) enviado(s) correctamente.
+[2026-10-14 06:56:16] Navegador cerrado.
+[2026-10-14 07:10:02] Inicio de la automatización.
+[2026-10-14 07:11:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-14 07:11:19] Navegador cerrado.
+[2026-10-14 11:57:59] Inicio de la automatización.
+[2026-10-14 11:58:38] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
@@ -1024,293 +1272,37 @@ Stacktrace:
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x591863+4fe3]
-	chromedriver!(No symbol) [0x4f1694]
-	chromedriver!(No symbol) [0x38bf90]
-	chromedriver!(No symbol) [0x3d5f1d]
-	chromedriver!(No symbol) [0x3d612b]
-	chromedriver!(No symbol) [0x418a92]
-	chromedriver!(No symbol) [0x3f8614]
-	chromedriver!(No symbol) [0x41631f]
-	chromedriver!(No symbol) [0x3f8366]
-	chromedriver!(No symbol) [0x3cb4a9]
-	chromedriver!(No symbol) [0x3cc1b4]
-	chromedriver!GetHandleVerifier [0x916a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x93d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x65f272+d29f2]
-	chromedriver!GetHandleVerifier [0x665263+d89e3]
-	chromedriver!(No symbol) [0x4fc54d]
-	chromedriver!(No symbol) [0x4f9358]
-	chromedriver!(No symbol) [0x4f9505]
-	chromedriver!(No symbol) [0x4e87a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xf33833]
+	(No symbol) [0xe40274]
+	(No symbol) [0xc4c3f0]
+	(No symbol) [0xc976d6]
+	(No symbol) [0xc978ab]
+	(No symbol) [0xce1ba2]
+	(No symbol) [0xcba144]
+	(No symbol) [0xcdf413]
+	(No symbol) [0xcb9e96]
+	(No symbol) [0xc8c4aa]
+	(No symbol) [0xc8d194]
+	(No symbol) [0x13ea7f4]
+	(No symbol) [0x1407d1b]
+	(No symbol) [0x1083e52]
+	(No symbol) [0x108c113]
+	(No symbol) [0xe4e548]
+	(No symbol) [0xe49518]
+	(No symbol) [0xe496c5]
+	(No symbol) [0xe35ac7]
+	(No symbol) [0x75ebfcc9]
+	(No symbol) [0x776082ae]
+	(No symbol) [0x7760827e]
 
 
-[2026-09-07 11:58:39] Navegador cerrado.
-[2026-09-07 12:57:02] Inicio de la automatización.
-[2026-09-07 12:59:01] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 12:59:03] Navegador cerrado.
-[2026-09-07 16:45:02] Inicio de la automatización.
-[2026-09-07 16:45:42] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 16:45:46] Navegador cerrado.
-[2026-09-07 17:00:03] Inicio de la automatización.
-[2026-09-07 17:00:25] Mensaje(s) enviado(s) correctamente.
-[2026-09-07 17:00:29] Navegador cerrado.
-[2026-09-08 06:55:02] Inicio de la automatización.
-[2026-09-08 06:55:40] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf25f1d]
-	chromedriver!(No symbol) [0xf2612b]
-	chromedriver!(No symbol) [0xf68a92]
-	chromedriver!(No symbol) [0xf48614]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-08 06:55:42] Navegador cerrado.
-[2026-09-08 07:03:10] Inicio de la automatización.
-[2026-09-08 07:03:48] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf25f1d]
-	chromedriver!(No symbol) [0xf2612b]
-	chromedriver!(No symbol) [0xf68a92]
-	chromedriver!(No symbol) [0xf48614]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-08 07:03:51] Navegador cerrado.
-[2026-09-08 07:05:09] Inicio de la automatización.
-[2026-09-08 07:05:46] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf25f1d]
-	chromedriver!(No symbol) [0xf2612b]
-	chromedriver!(No symbol) [0xf68a92]
-	chromedriver!(No symbol) [0xf48614]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-08 07:05:49] Navegador cerrado.
-[2026-09-08 07:06:08] Inicio de la automatización.
-[2026-09-08 07:06:46] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf25f1d]
-	chromedriver!(No symbol) [0xf2612b]
-	chromedriver!(No symbol) [0xf68a92]
-	chromedriver!(No symbol) [0xf48614]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-08 07:06:48] Navegador cerrado.
-[2026-09-08 07:06:51] Inicio de la automatización.
-[2026-09-08 07:07:04] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 94, in abrir_grupo
-    resultados[0].click()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 114, in click
-    self._execute(Command.CLICK_ELEMENT)
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 508, in _execute
-    return self._parent.execute(command, params)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 450, in execute
-    self.error_handler.check_response(response)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <span dir="auto" title="Reparaciones MVSRL (Asignación y reporte de OM)" class="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i xnpuxes" style="min-height: 0px;">...</span> is not clickable at point (367, 230). Other element would receive the click: <div class="x9f619 x78zum5 xdt5ytf x6s0dn4 xl56j7k xh8yej3 x1otje77 x1jn0hjm x1us19tq x1t137rt" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="_r_2s_">...</div>
-  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf2bf08]
-	chromedriver!(No symbol) [0xf2a599]
-	chromedriver!(No symbol) [0xf28375]
-	chromedriver!(No symbol) [0xf27584]
-	chromedriver!(No symbol) [0xf1ce7a]
-	chromedriver!(No symbol) [0xf485cc]
-	chromedriver!(No symbol) [0xf1c8b4]
-	chromedriver!(No symbol) [0xf48794]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-08 07:07:06] Navegador cerrado.
-[2026-09-08 07:07:30] Inicio de la automatización.
-[2026-09-08 07:07:33] Inicio de la automatización.
-[2026-09-08 07:07:38] ERROR: Traceback (most recent call last):
+[2026-10-14 11:58:41] Navegador cerrado.
+[2026-10-14 12:57:01] Inicio de la automatización.
+[2026-10-14 12:57:18] Mensaje(s) enviado(s) correctamente.
+[2026-10-14 12:57:21] Navegador cerrado.
+[2026-10-14 16:45:02] Inicio de la automatización.
+[2026-10-14 16:45:12] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 185, in ejecutar_automatizacion
     driver = crear_driver()
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 59, in crear_driver
@@ -1345,38 +1337,42 @@ Stacktrace:
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
   File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: crashed.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf11328]
-	chromedriver!(No symbol) [0xf0da50]
-	chromedriver!(No symbol) [0xf545ef]
-	chromedriver!(No symbol) [0xf53e07]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xee3833]
+	(No symbol) [0xdf0274]
+	(No symbol) [0xbfc3f0]
+	(No symbol) [0xc34b5c]
+	(No symbol) [0xc2e9ab]
+	(No symbol) [0xc768cd]
+	(No symbol) [0xc76107]
+	(No symbol) [0xc69e96]
+	(No symbol) [0xc3c4aa]
+	(No symbol) [0xc3d194]
+	(No symbol) [0x139a7f4]
+	(No symbol) [0x13b7d1b]
+	(No symbol) [0x1033e52]
+	(No symbol) [0x103c113]
+	(No symbol) [0xdfe548]
+	(No symbol) [0xdf9518]
+	(No symbol) [0xdf96c5]
+	(No symbol) [0xde5ac7]
+	(No symbol) [0x75ebfcc9]
+	(No symbol) [0x776082ae]
+	(No symbol) [0x7760827e]
 
 
-[2026-09-08 07:07:38] Navegador cerrado.
-[2026-09-08 07:07:46] ERROR: Traceback (most recent call last):
+[2026-10-14 16:45:12] Navegador cerrado.
+[2026-10-14 17:00:02] Inicio de la automatización.
+[2026-10-14 17:00:57] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 330, in <lambda>
+    abrir_grupo(driver),
     ~~~~~~~~~~~^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
@@ -1390,23 +1386,41 @@ Stacktrace:
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 112, in until
-    value = method(self._driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 515, in _predicate
-    element = visibility_of(target)(driver)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 208, in _predicate
-    return _element_if_visible(element)
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 223, in _element_if_visible
-    return element if element.is_displayed() == visibility else False
-                      ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'is_displayed'
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xee3833]
+	(No symbol) [0xdf0274]
+	(No symbol) [0xbfc3f0]
+	(No symbol) [0xc476d6]
+	(No symbol) [0xc478ab]
+	(No symbol) [0xc91ba2]
+	(No symbol) [0xc6a144]
+	(No symbol) [0xc8f413]
+	(No symbol) [0xc69e96]
+	(No symbol) [0xc3c4aa]
+	(No symbol) [0xc3d194]
+	(No symbol) [0x139a7f4]
+	(No symbol) [0x13b7d1b]
+	(No symbol) [0x1033e52]
+	(No symbol) [0x103c113]
+	(No symbol) [0xdfe548]
+	(No symbol) [0xdf9518]
+	(No symbol) [0xdf96c5]
+	(No symbol) [0xde5ac7]
+	(No symbol) [0x75ebfcc9]
+	(No symbol) [0x776082ae]
+	(No symbol) [0x7760827e]
 
-[2026-09-08 07:07:48] Navegador cerrado.
-[2026-09-08 07:07:49] Inicio de la automatización.
-[2026-09-08 07:08:51] Mensaje(s) enviado(s) correctamente.
-[2026-09-08 07:08:54] Navegador cerrado.
-[2026-09-08 07:10:02] Inicio de la automatización.
-[2026-09-08 07:10:40] ERROR: Traceback (most recent call last):
+
+[2026-10-14 17:00:59] Navegador cerrado.
+[2026-10-15 06:55:03] Inicio de la automatización.
+[2026-10-15 06:56:14] Mensaje(s) enviado(s) correctamente.
+[2026-10-15 06:56:17] Navegador cerrado.
+[2026-10-15 07:10:02] Inicio de la automatización.
+[2026-10-15 07:10:52] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
@@ -1429,465 +1443,40 @@ AttributeError: 'NoneType' object has no attribute 'is_displayed'
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x10e1863+4fe3]
-	chromedriver!(No symbol) [0x1041694]
-	chromedriver!(No symbol) [0xedbf90]
-	chromedriver!(No symbol) [0xf25f1d]
-	chromedriver!(No symbol) [0xf2612b]
-	chromedriver!(No symbol) [0xf68a92]
-	chromedriver!(No symbol) [0xf48614]
-	chromedriver!(No symbol) [0xf6631f]
-	chromedriver!(No symbol) [0xf48366]
-	chromedriver!(No symbol) [0xf1b4a9]
-	chromedriver!(No symbol) [0xf1c1b4]
-	chromedriver!GetHandleVerifier [0x1466a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x148d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x11af272+d29f2]
-	chromedriver!GetHandleVerifier [0x11b5263+d89e3]
-	chromedriver!(No symbol) [0x104c54d]
-	chromedriver!(No symbol) [0x1049358]
-	chromedriver!(No symbol) [0x1049505]
-	chromedriver!(No symbol) [0x10387a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xb73833]
+	(No symbol) [0xa80274]
+	(No symbol) [0x88c3f0]
+	(No symbol) [0x8d76d6]
+	(No symbol) [0x8d78ab]
+	(No symbol) [0x921ba2]
+	(No symbol) [0x8fa144]
+	(No symbol) [0x91f413]
+	(No symbol) [0x8f9e96]
+	(No symbol) [0x8cc4aa]
+	(No symbol) [0x8cd194]
+	(No symbol) [0x102a7f4]
+	(No symbol) [0x1047d1b]
+	(No symbol) [0xcc3e52]
+	(No symbol) [0xccc113]
+	(No symbol) [0xa8e548]
+	(No symbol) [0xa89518]
+	(No symbol) [0xa896c5]
+	(No symbol) [0xa75ac7]
+	(No symbol) [0x75ebfcc9]
+	(No symbol) [0x776082ae]
+	(No symbol) [0x7760827e]
 
 
-[2026-09-08 07:10:43] Navegador cerrado.
-[2026-09-08 11:57:59] Inicio de la automatización.
-[2026-09-08 11:58:17] Mensaje(s) enviado(s) correctamente.
-[2026-09-08 11:58:21] Navegador cerrado.
-[2026-09-08 12:57:03] Inicio de la automatización.
-[2026-09-08 12:57:46] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
-    abrir_grupo(driver),
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x411863+4fe3]
-	chromedriver!(No symbol) [0x371694]
-	chromedriver!(No symbol) [0x20bf90]
-	chromedriver!(No symbol) [0x255f1d]
-	chromedriver!(No symbol) [0x25612b]
-	chromedriver!(No symbol) [0x298a92]
-	chromedriver!(No symbol) [0x278614]
-	chromedriver!(No symbol) [0x29631f]
-	chromedriver!(No symbol) [0x278366]
-	chromedriver!(No symbol) [0x24b4a9]
-	chromedriver!(No symbol) [0x24c1b4]
-	chromedriver!GetHandleVerifier [0x796a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x7bd702+3b0e82]
-	chromedriver!GetHandleVerifier [0x4df272+d29f2]
-	chromedriver!GetHandleVerifier [0x4e5263+d89e3]
-	chromedriver!(No symbol) [0x37c54d]
-	chromedriver!(No symbol) [0x379358]
-	chromedriver!(No symbol) [0x379505]
-	chromedriver!(No symbol) [0x3687a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-	(No symbol) [(nil)]
-
-
-[2026-09-08 12:57:48] Navegador cerrado.
-[2026-09-08 16:45:03] Inicio de la automatización.
-[2026-09-08 16:45:46] Mensaje(s) enviado(s) correctamente.
-[2026-09-08 16:45:49] Navegador cerrado.
-[2026-09-08 17:00:02] Inicio de la automatización.
-[2026-09-08 17:00:16] Mensaje(s) enviado(s) correctamente.
-[2026-09-08 17:00:19] Navegador cerrado.
-[2026-09-09 06:55:02] Inicio de la automatización.
-[2026-09-09 06:55:40] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x5f1863+4fe3]
-	chromedriver!(No symbol) [0x551694]
-	chromedriver!(No symbol) [0x3ebf90]
-	chromedriver!(No symbol) [0x435f1d]
-	chromedriver!(No symbol) [0x43612b]
-	chromedriver!(No symbol) [0x478a92]
-	chromedriver!(No symbol) [0x458614]
-	chromedriver!(No symbol) [0x47631f]
-	chromedriver!(No symbol) [0x458366]
-	chromedriver!(No symbol) [0x42b4a9]
-	chromedriver!(No symbol) [0x42c1b4]
-	chromedriver!GetHandleVerifier [0x976a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x99d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x6bf272+d29f2]
-	chromedriver!GetHandleVerifier [0x6c5263+d89e3]
-	chromedriver!(No symbol) [0x55c54d]
-	chromedriver!(No symbol) [0x559358]
-	chromedriver!(No symbol) [0x559505]
-	chromedriver!(No symbol) [0x5487a7]
-	KERNEL32!BaseThreadInitThunk [0x7607fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x771782ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x7717827e+ee]
-
-
-[2026-09-09 06:55:42] Navegador cerrado.
-[2026-09-09 07:20:43] Inicio de la automatización.
-[2026-09-09 07:21:22] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x571863+4fe3]
-	chromedriver!(No symbol) [0x4d1694]
-	chromedriver!(No symbol) [0x36bf90]
-	chromedriver!(No symbol) [0x3b5f1d]
-	chromedriver!(No symbol) [0x3b612b]
-	chromedriver!(No symbol) [0x3f8a92]
-	chromedriver!(No symbol) [0x3d8614]
-	chromedriver!(No symbol) [0x3f631f]
-	chromedriver!(No symbol) [0x3d8366]
-	chromedriver!(No symbol) [0x3ab4a9]
-	chromedriver!(No symbol) [0x3ac1b4]
-	chromedriver!GetHandleVerifier [0x8f6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x91d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x63f272+d29f2]
-	chromedriver!GetHandleVerifier [0x645263+d89e3]
-	chromedriver!(No symbol) [0x4dc54d]
-	chromedriver!(No symbol) [0x4d9358]
-	chromedriver!(No symbol) [0x4d9505]
-	chromedriver!(No symbol) [0x4c87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-09 07:21:24] Navegador cerrado.
-[2026-09-09 07:23:57] Inicio de la automatización.
-[2026-09-09 07:25:05] Mensaje(s) enviado(s) correctamente.
-[2026-09-09 07:25:08] Navegador cerrado.
-[2026-09-09 11:57:59] Inicio de la automatización.
-[2026-09-09 11:58:15] Mensaje(s) enviado(s) correctamente.
-[2026-09-09 11:58:18] Navegador cerrado.
-[2026-09-09 12:57:01] Inicio de la automatización.
-[2026-09-09 12:57:38] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
-    abrir_grupo(driver),
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x571863+4fe3]
-	chromedriver!(No symbol) [0x4d1694]
-	chromedriver!(No symbol) [0x36bf90]
-	chromedriver!(No symbol) [0x3b5f1d]
-	chromedriver!(No symbol) [0x3b612b]
-	chromedriver!(No symbol) [0x3f8a92]
-	chromedriver!(No symbol) [0x3d8614]
-	chromedriver!(No symbol) [0x3f631f]
-	chromedriver!(No symbol) [0x3d8366]
-	chromedriver!(No symbol) [0x3ab4a9]
-	chromedriver!(No symbol) [0x3ac1b4]
-	chromedriver!GetHandleVerifier [0x8f6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x91d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x63f272+d29f2]
-	chromedriver!GetHandleVerifier [0x645263+d89e3]
-	chromedriver!(No symbol) [0x4dc54d]
-	chromedriver!(No symbol) [0x4d9358]
-	chromedriver!(No symbol) [0x4d9505]
-	chromedriver!(No symbol) [0x4c87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-09 12:57:41] Navegador cerrado.
-[2026-09-09 14:55:39] Inicio de la automatización.
-[2026-09-09 14:56:18] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x571863+4fe3]
-	chromedriver!(No symbol) [0x4d1694]
-	chromedriver!(No symbol) [0x36bf90]
-	chromedriver!(No symbol) [0x3b5f1d]
-	chromedriver!(No symbol) [0x3b612b]
-	chromedriver!(No symbol) [0x3f8a92]
-	chromedriver!(No symbol) [0x3d8614]
-	chromedriver!(No symbol) [0x3f631f]
-	chromedriver!(No symbol) [0x3d8366]
-	chromedriver!(No symbol) [0x3ab4a9]
-	chromedriver!(No symbol) [0x3ac1b4]
-	chromedriver!GetHandleVerifier [0x8f6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x91d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x63f272+d29f2]
-	chromedriver!GetHandleVerifier [0x645263+d89e3]
-	chromedriver!(No symbol) [0x4dc54d]
-	chromedriver!(No symbol) [0x4d9358]
-	chromedriver!(No symbol) [0x4d9505]
-	chromedriver!(No symbol) [0x4c87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-09 14:56:20] Navegador cerrado.
-[2026-09-09 14:56:23] Inicio de la automatización.
-[2026-09-09 14:57:00] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x571863+4fe3]
-	chromedriver!(No symbol) [0x4d1694]
-	chromedriver!(No symbol) [0x36bf90]
-	chromedriver!(No symbol) [0x3b5f1d]
-	chromedriver!(No symbol) [0x3b612b]
-	chromedriver!(No symbol) [0x3f8a92]
-	chromedriver!(No symbol) [0x3d8614]
-	chromedriver!(No symbol) [0x3f631f]
-	chromedriver!(No symbol) [0x3d8366]
-	chromedriver!(No symbol) [0x3ab4a9]
-	chromedriver!(No symbol) [0x3ac1b4]
-	chromedriver!GetHandleVerifier [0x8f6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x91d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x63f272+d29f2]
-	chromedriver!GetHandleVerifier [0x645263+d89e3]
-	chromedriver!(No symbol) [0x4dc54d]
-	chromedriver!(No symbol) [0x4d9358]
-	chromedriver!(No symbol) [0x4d9505]
-	chromedriver!(No symbol) [0x4c87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-09 14:57:02] Navegador cerrado.
-[2026-09-09 14:57:03] Inicio de la automatización.
-[2026-09-09 14:57:39] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x571863+4fe3]
-	chromedriver!(No symbol) [0x4d1694]
-	chromedriver!(No symbol) [0x36bf90]
-	chromedriver!(No symbol) [0x3b5f1d]
-	chromedriver!(No symbol) [0x3b612b]
-	chromedriver!(No symbol) [0x3f8a92]
-	chromedriver!(No symbol) [0x3d8614]
-	chromedriver!(No symbol) [0x3f631f]
-	chromedriver!(No symbol) [0x3d8366]
-	chromedriver!(No symbol) [0x3ab4a9]
-	chromedriver!(No symbol) [0x3ac1b4]
-	chromedriver!GetHandleVerifier [0x8f6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x91d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x63f272+d29f2]
-	chromedriver!GetHandleVerifier [0x645263+d89e3]
-	chromedriver!(No symbol) [0x4dc54d]
-	chromedriver!(No symbol) [0x4d9358]
-	chromedriver!(No symbol) [0x4d9505]
-	chromedriver!(No symbol) [0x4c87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-09 14:57:42] Navegador cerrado.
-[2026-09-09 16:45:02] Inicio de la automatización.
-[2026-09-09 16:45:39] Mensaje(s) enviado(s) correctamente.
-[2026-09-09 16:45:42] Navegador cerrado.
-[2026-09-09 17:00:02] Inicio de la automatización.
-[2026-09-09 17:00:16] Mensaje(s) enviado(s) correctamente.
-[2026-09-09 17:00:18] Navegador cerrado.
-[2026-09-10 06:55:02] Inicio de la automatización.
-[2026-09-10 06:55:40] ERROR: Traceback (most recent call last):
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
-    accion(driver)
-    ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
-    abrir_grupo(driver)
-    ~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
-    buscador = esperar_elemento_clickable(
-        driver,
-        XPATH_BUSCADOR
-    )
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 39, in esperar_elemento_clickable
-    return WebDriverWait(driver, timeout).until(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        EC.element_to_be_clickable((By.XPATH, xpath))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	chromedriver!GetHandleVerifier [0xa11863+4fe3]
-	chromedriver!(No symbol) [0x971694]
-	chromedriver!(No symbol) [0x80bf90]
-	chromedriver!(No symbol) [0x855f1d]
-	chromedriver!(No symbol) [0x85612b]
-	chromedriver!(No symbol) [0x898a92]
-	chromedriver!(No symbol) [0x878614]
-	chromedriver!(No symbol) [0x89631f]
-	chromedriver!(No symbol) [0x878366]
-	chromedriver!(No symbol) [0x84b4a9]
-	chromedriver!(No symbol) [0x84c1b4]
-	chromedriver!GetHandleVerifier [0xd96a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0xdbd702+3b0e82]
-	chromedriver!GetHandleVerifier [0xadf272+d29f2]
-	chromedriver!GetHandleVerifier [0xae5263+d89e3]
-	chromedriver!(No symbol) [0x97c54d]
-	chromedriver!(No symbol) [0x979358]
-	chromedriver!(No symbol) [0x979505]
-	chromedriver!(No symbol) [0x9687a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
-
-
-[2026-09-10 06:55:42] Navegador cerrado.
-[2026-09-10 07:10:03] Inicio de la automatización.
-[2026-09-10 07:10:45] Mensaje(s) enviado(s) correctamente.
-[2026-09-10 07:10:47] Navegador cerrado.
-[2026-09-10 11:57:58] Inicio de la automatización.
-[2026-09-10 11:58:11] Mensaje(s) enviado(s) correctamente.
-[2026-09-10 11:58:14] Navegador cerrado.
-[2026-09-10 12:57:02] Inicio de la automatización.
-[2026-09-10 12:57:20] Mensaje(s) enviado(s) correctamente.
-[2026-09-10 12:57:23] Navegador cerrado.
-[2026-09-10 16:45:01] Inicio de la automatización.
-[2026-09-10 16:45:53] Mensaje(s) enviado(s) correctamente.
-[2026-09-10 16:45:55] Navegador cerrado.
-[2026-09-10 17:00:03] Inicio de la automatización.
-[2026-09-10 17:00:20] Mensaje(s) enviado(s) correctamente.
-[2026-09-10 17:00:23] Navegador cerrado.
-[2026-09-11 06:55:02] Inicio de la automatización.
-[2026-09-11 06:56:07] Mensaje(s) enviado(s) correctamente.
-[2026-09-11 06:56:09] Navegador cerrado.
-[2026-09-11 07:10:02] Inicio de la automatización.
-[2026-09-11 07:10:39] ERROR: Traceback (most recent call last):
+[2026-10-15 07:10:55] Navegador cerrado.
+[2026-10-15 11:57:59] Inicio de la automatización.
+[2026-10-15 11:58:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-15 11:58:18] Navegador cerrado.
+[2026-10-15 12:57:03] Inicio de la automatización.
+[2026-10-15 12:57:20] Mensaje(s) enviado(s) correctamente.
+[2026-10-15 12:57:23] Navegador cerrado.
+[2026-10-15 16:45:02] Inicio de la automatización.
+[2026-10-15 16:45:42] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
@@ -1910,38 +1499,42 @@ Stacktrace:
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0x1161863+4fe3]
-	chromedriver!(No symbol) [0x10c1694]
-	chromedriver!(No symbol) [0xf5bf90]
-	chromedriver!(No symbol) [0xfa5f1d]
-	chromedriver!(No symbol) [0xfa612b]
-	chromedriver!(No symbol) [0xfe8a92]
-	chromedriver!(No symbol) [0xfc8614]
-	chromedriver!(No symbol) [0xfe631f]
-	chromedriver!(No symbol) [0xfc8366]
-	chromedriver!(No symbol) [0xf9b4a9]
-	chromedriver!(No symbol) [0xf9c1b4]
-	chromedriver!GetHandleVerifier [0x14e6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x150d702+3b0e82]
-	chromedriver!GetHandleVerifier [0x122f272+d29f2]
-	chromedriver!GetHandleVerifier [0x1235263+d89e3]
-	chromedriver!(No symbol) [0x10cc54d]
-	chromedriver!(No symbol) [0x10c9358]
-	chromedriver!(No symbol) [0x10c9505]
-	chromedriver!(No symbol) [0x10b87a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x573833]
+	(No symbol) [0x480274]
+	(No symbol) [0x28c3f0]
+	(No symbol) [0x2d76d6]
+	(No symbol) [0x2d78ab]
+	(No symbol) [0x321ba2]
+	(No symbol) [0x2fa144]
+	(No symbol) [0x31f413]
+	(No symbol) [0x2f9e96]
+	(No symbol) [0x2cc4aa]
+	(No symbol) [0x2cd194]
+	(No symbol) [0xa2a7f4]
+	(No symbol) [0xa47d1b]
+	(No symbol) [0x6c3e52]
+	(No symbol) [0x6cc113]
+	(No symbol) [0x48e548]
+	(No symbol) [0x489518]
+	(No symbol) [0x4896c5]
+	(No symbol) [0x475ac7]
+	(No symbol) [0x75ebfcc9]
+	(No symbol) [0x776082ae]
+	(No symbol) [0x7760827e]
 
 
-[2026-09-11 07:10:41] Navegador cerrado.
-[2026-09-11 11:57:58] Inicio de la automatización.
-[2026-09-11 11:58:35] ERROR: Traceback (most recent call last):
+[2026-10-15 16:45:44] Navegador cerrado.
+[2026-10-15 17:00:02] Inicio de la automatización.
+[2026-10-15 17:00:58] Mensaje(s) enviado(s) correctamente.
+[2026-10-15 17:01:02] Navegador cerrado.
+[2026-10-16 06:55:03] Inicio de la automatización.
+[2026-10-16 06:55:42] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 302, in <lambda>
-    abrir_grupo(driver),
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
+    abrir_grupo(driver)
     ~~~~~~~~~~~^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
@@ -1959,38 +1552,39 @@ Stacktrace:
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0xe31863+4fe3]
-	chromedriver!(No symbol) [0xd91694]
-	chromedriver!(No symbol) [0xc2bf90]
-	chromedriver!(No symbol) [0xc75f1d]
-	chromedriver!(No symbol) [0xc7612b]
-	chromedriver!(No symbol) [0xcb8a92]
-	chromedriver!(No symbol) [0xc98614]
-	chromedriver!(No symbol) [0xcb631f]
-	chromedriver!(No symbol) [0xc98366]
-	chromedriver!(No symbol) [0xc6b4a9]
-	chromedriver!(No symbol) [0xc6c1b4]
-	chromedriver!GetHandleVerifier [0x11b6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x11dd702+3b0e82]
-	chromedriver!GetHandleVerifier [0xeff272+d29f2]
-	chromedriver!GetHandleVerifier [0xf05263+d89e3]
-	chromedriver!(No symbol) [0xd9c54d]
-	chromedriver!(No symbol) [0xd99358]
-	chromedriver!(No symbol) [0xd99505]
-	chromedriver!(No symbol) [0xd887a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x12237c3]
+	(No symbol) [0x1130204]
+	(No symbol) [0xf3c3f0]
+	(No symbol) [0xf876d6]
+	(No symbol) [0xf878ab]
+	(No symbol) [0xfd1ba2]
+	(No symbol) [0xfaa144]
+	(No symbol) [0xfcf413]
+	(No symbol) [0xfa9e96]
+	(No symbol) [0xf7c4aa]
+	(No symbol) [0xf7d194]
+	(No symbol) [0x16da7b4]
+	(No symbol) [0x16f7cdb]
+	(No symbol) [0x1373de2]
+	(No symbol) [0x137c0a3]
+	(No symbol) [0x113e4d8]
+	(No symbol) [0x11394a8]
+	(No symbol) [0x1139655]
+	(No symbol) [0x1125a57]
+	(No symbol) [0x761dfcc9]
+	(No symbol) [0x778482ae]
+	(No symbol) [0x7784827e]
 
 
-[2026-09-11 11:58:38] Navegador cerrado.
-[2026-09-11 12:57:03] Inicio de la automatización.
-[2026-09-11 12:57:44] ERROR: Traceback (most recent call last):
+[2026-10-16 06:55:44] Navegador cerrado.
+[2026-10-16 07:10:02] Inicio de la automatización.
+[2026-10-16 07:10:41] ERROR: Traceback (most recent call last):
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
-    abrir_grupo(driver),
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
     ~~~~~~~~~~~^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
@@ -2008,28 +1602,29 @@ Stacktrace:
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	chromedriver!GetHandleVerifier [0xe31863+4fe3]
-	chromedriver!(No symbol) [0xd91694]
-	chromedriver!(No symbol) [0xc2bf90]
-	chromedriver!(No symbol) [0xc75f1d]
-	chromedriver!(No symbol) [0xc7612b]
-	chromedriver!(No symbol) [0xcb8a92]
-	chromedriver!(No symbol) [0xc98614]
-	chromedriver!(No symbol) [0xcb631f]
-	chromedriver!(No symbol) [0xc98366]
-	chromedriver!(No symbol) [0xc6b4a9]
-	chromedriver!(No symbol) [0xc6c1b4]
-	chromedriver!GetHandleVerifier [0x11b6a2a+38a1aa]
-	chromedriver!GetHandleVerifier [0x11dd702+3b0e82]
-	chromedriver!GetHandleVerifier [0xeff272+d29f2]
-	chromedriver!GetHandleVerifier [0xf05263+d89e3]
-	chromedriver!(No symbol) [0xd9c54d]
-	chromedriver!(No symbol) [0xd99358]
-	chromedriver!(No symbol) [0xd99505]
-	chromedriver!(No symbol) [0xd887a7]
-	KERNEL32!BaseThreadInitThunk [0x76c1fcc9+19]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb82ae+11e]
-	ntdll!RtlGetAppContainerNamedObjectPath [0x77bb827e+ee]
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x12237c3]
+	(No symbol) [0x1130204]
+	(No symbol) [0xf3c3f0]
+	(No symbol) [0xf876d6]
+	(No symbol) [0xf878ab]
+	(No symbol) [0xfd1ba2]
+	(No symbol) [0xfaa144]
+	(No symbol) [0xfcf413]
+	(No symbol) [0xfa9e96]
+	(No symbol) [0xf7c4aa]
+	(No symbol) [0xf7d194]
+	(No symbol) [0x16da7b4]
+	(No symbol) [0x16f7cdb]
+	(No symbol) [0x1373de2]
+	(No symbol) [0x137c0a3]
+	(No symbol) [0x113e4d8]
+	(No symbol) [0x11394a8]
+	(No symbol) [0x1139655]
+	(No symbol) [0x1125a57]
+	(No symbol) [0x761dfcc9]
+	(No symbol) [0x778482ae]
+	(No symbol) [0x7784827e]
 
 
-[2026-09-11 12:57:47] Navegador cerrado.
+[2026-10-16 07:10:44] Navegador cerrado.
