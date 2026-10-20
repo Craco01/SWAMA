@@ -3,6 +3,7 @@ import json
 import shutil
 import time
 import unicodedata
+import ctypes
 from datetime import datetime
 
 from selenium import webdriver
@@ -85,13 +86,56 @@ def iniciar_driver():
         options=options
     )
 
-    driver.get('https://web.whatsapp.com')
+    try:
+        driver.get('https://web.whatsapp.com')
+        WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.ID, "pane-side"))
+        )
+        return driver
+    except Exception:
+        cerrar_driver(driver)
+        raise
 
-    WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.ID, "pane-side"))
-    )
+def adquirir_bloqueo_instancia():
+    """Impide que dos procesos WAOMUNI trabajen al mismo tiempo en Windows."""
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.CreateMutexW.argtypes = (ctypes.c_void_p, ctypes.c_bool, ctypes.c_wchar_p)
+    kernel32.CreateMutexW.restype = ctypes.c_void_p
+    kernel32.CloseHandle.argtypes = (ctypes.c_void_p,)
+    kernel32.CloseHandle.restype = ctypes.c_bool
 
-    return driver
+    handle = kernel32.CreateMutexW(None, True, "Local\\WAOMUNI_Selenium_SingleInstance_v1")
+    if not handle:
+        raise ctypes.WinError(ctypes.get_last_error())
+
+    # ERROR_ALREADY_EXISTS: el mutex ya pertenece a otra instancia.
+    if ctypes.get_last_error() == 183:
+        kernel32.CloseHandle(handle)
+        return None
+    return handle
+
+def cerrar_driver(driver):
+    """Cierra el navegador y termina ChromeDriver si Selenium no pudo hacerlo."""
+    if driver is None:
+        return
+
+    try:
+        driver.quit()
+    except Exception as e:
+        print("Error al cerrar Chrome mediante Selenium:", e)
+    finally:
+        servicio = getattr(driver, "service", None)
+        proceso = getattr(servicio, "process", None)
+        if proceso is not None and proceso.poll() is None:
+            try:
+                proceso.terminate()
+                proceso.wait(timeout=5)
+            except Exception:
+                try:
+                    proceso.kill()
+                    proceso.wait(timeout=5)
+                except Exception as e:
+                    print("No se pudo terminar ChromeDriver:", e)
 
 def obtener_caja_mensaje(driver):
     return WebDriverWait(driver, 30).until(
@@ -477,12 +521,24 @@ def procesar_waom2(driver):
 
 # ================= MAIN =================
 
-driver = iniciar_driver()
-
-try:
-    procesar_waom(driver)
-    procesar_waom3(driver)
-    procesar_waom2(driver)
-finally:
-    time.sleep(5)
-    driver.quit()
+mutex = adquirir_bloqueo_instancia()
+if mutex is None:
+    print("WAOMUNI ya está ejecutándose; esta instancia termina sin enviar mensajes.")
+else:
+    driver = None
+    try:
+        driver = iniciar_driver()
+        procesar_waom(driver)
+        procesar_waom3(driver)
+        procesar_waom2(driver)
+    finally:
+        try:
+            cerrar_driver(driver)
+        finally:
+            kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel32.ReleaseMutex.argtypes = (ctypes.c_void_p,)
+            kernel32.ReleaseMutex.restype = ctypes.c_bool
+            kernel32.CloseHandle.argtypes = (ctypes.c_void_p,)
+            kernel32.CloseHandle.restype = ctypes.c_bool
+            kernel32.ReleaseMutex(mutex)
+            kernel32.CloseHandle(mutex)
