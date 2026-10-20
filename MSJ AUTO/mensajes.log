@@ -1530,6 +1530,7 @@ Symbols not available. Dumping unresolved backtrace:
 [2026-10-15 17:01:02] Navegador cerrado.
 [2026-10-16 06:55:03] Inicio de la automatización.
 [2026-10-16 06:55:42] ERROR: Traceback (most recent call last):
+<<<<<<< HEAD
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
@@ -1630,11 +1631,13 @@ Symbols not available. Dumping unresolved backtrace:
 [2026-10-16 07:10:44] Navegador cerrado.
 [2026-10-16 11:58:00] Inicio de la automatización.
 [2026-10-16 11:58:39] ERROR: Traceback (most recent call last):
+=======
+>>>>>>> 5254b2176501122e0bb9d417032125b27ea120b1
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 302, in <lambda>
-    abrir_grupo(driver),
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 221, in accion
+    abrir_grupo(driver)
     ~~~~~~~~~~~^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
@@ -1653,6 +1656,7 @@ Symbols not available. Dumping unresolved backtrace:
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 Symbols not available. Dumping unresolved backtrace:
+<<<<<<< HEAD
 	(No symbol) [0x14237c3]
 	(No symbol) [0x1330204]
 	(No symbol) [0x113c3f0]
@@ -1680,11 +1684,40 @@ Symbols not available. Dumping unresolved backtrace:
 [2026-10-16 11:58:42] Navegador cerrado.
 [2026-10-16 12:57:02] Inicio de la automatización.
 [2026-10-16 12:57:44] ERROR: Traceback (most recent call last):
+=======
+	(No symbol) [0x12237c3]
+	(No symbol) [0x1130204]
+	(No symbol) [0xf3c3f0]
+	(No symbol) [0xf876d6]
+	(No symbol) [0xf878ab]
+	(No symbol) [0xfd1ba2]
+	(No symbol) [0xfaa144]
+	(No symbol) [0xfcf413]
+	(No symbol) [0xfa9e96]
+	(No symbol) [0xf7c4aa]
+	(No symbol) [0xf7d194]
+	(No symbol) [0x16da7b4]
+	(No symbol) [0x16f7cdb]
+	(No symbol) [0x1373de2]
+	(No symbol) [0x137c0a3]
+	(No symbol) [0x113e4d8]
+	(No symbol) [0x11394a8]
+	(No symbol) [0x1139655]
+	(No symbol) [0x1125a57]
+	(No symbol) [0x761dfcc9]
+	(No symbol) [0x778482ae]
+	(No symbol) [0x7784827e]
+
+
+[2026-10-16 06:55:44] Navegador cerrado.
+[2026-10-16 07:10:02] Inicio de la automatización.
+[2026-10-16 07:10:41] ERROR: Traceback (most recent call last):
+>>>>>>> 5254b2176501122e0bb9d417032125b27ea120b1
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 187, in ejecutar_automatizacion
     accion(driver)
     ~~~~~~^^^^^^^^
-  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 316, in <lambda>
-    abrir_grupo(driver),
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 366, in accion
+    abrir_grupo(driver)
     ~~~~~~~~~~~^^^^^^^^
   File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 76, in abrir_grupo
     buscador = esperar_elemento_clickable(
@@ -1703,6 +1736,7 @@ Symbols not available. Dumping unresolved backtrace:
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 Symbols not available. Dumping unresolved backtrace:
+<<<<<<< HEAD
 	(No symbol) [0x14237c3]
 	(No symbol) [0x1330204]
 	(No symbol) [0x113c3f0]
@@ -2238,3 +2272,30 @@ Symbols not available. Dumping unresolved backtrace:
 [2026-10-20 07:10:02] Inicio de la automatización.
 [2026-10-20 07:11:00] Mensaje(s) enviado(s) correctamente.
 [2026-10-20 07:11:03] Navegador cerrado.
+=======
+	(No symbol) [0x12237c3]
+	(No symbol) [0x1130204]
+	(No symbol) [0xf3c3f0]
+	(No symbol) [0xf876d6]
+	(No symbol) [0xf878ab]
+	(No symbol) [0xfd1ba2]
+	(No symbol) [0xfaa144]
+	(No symbol) [0xfcf413]
+	(No symbol) [0xfa9e96]
+	(No symbol) [0xf7c4aa]
+	(No symbol) [0xf7d194]
+	(No symbol) [0x16da7b4]
+	(No symbol) [0x16f7cdb]
+	(No symbol) [0x1373de2]
+	(No symbol) [0x137c0a3]
+	(No symbol) [0x113e4d8]
+	(No symbol) [0x11394a8]
+	(No symbol) [0x1139655]
+	(No symbol) [0x1125a57]
+	(No symbol) [0x761dfcc9]
+	(No symbol) [0x778482ae]
+	(No symbol) [0x7784827e]
+
+
+[2026-10-16 07:10:44] Navegador cerrado.
+>>>>>>> 5254b2176501122e0bb9d417032125b27ea120b1
