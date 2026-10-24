@@ -24,6 +24,11 @@ XPATH_BUSCADOR = '/html/body/div[2]/div/div/div/div/div[3]/div/div[3]/div/div[1]
 XPATH_RESULTADO_GRUPO = '//span[@title="{grupo}"]'
 XPATH_MENSAJE = '/html/body/div[2]/div/div/div/div/div[3]/div/div[4]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'
 XPATH_BOTON_CONTINUAR = '//a[contains(@href,"web.whatsapp.com/send")]'
+# Alternativas vigentes (se prueban primero); el XPath completo queda de respaldo.
+XPATH_ALTERNATIVOS = {
+    XPATH_BUSCADOR: '//div[@id="side"]//input[@role="textbox" or @type="text" or @type="search"] | //div[@id="side"]//div[@contenteditable="true"][@role="textbox"]',
+    XPATH_MENSAJE: '//footer//div[@contenteditable="true"][@role="textbox"]',
+}
 ARCHIVO_LOG = Path(__file__).with_name("mensajes.log")
 
 
@@ -35,7 +40,15 @@ def registrar(texto):
 
 
 def esperar_elemento_clickable(driver, xpath, timeout=30):
-    """Espera un elemento de WhatsApp Web usando su XPath completo."""
+    """Espera un elemento de WhatsApp Web: primero la alternativa, luego el XPath original."""
+    alternativo = XPATH_ALTERNATIVOS.get(xpath)
+    if alternativo:
+        try:
+            return WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, alternativo))
+            )
+        except Exception:
+            registrar("Alternativa sin resultado; usando XPath original.")
     return WebDriverWait(driver, timeout).until(
         EC.element_to_be_clickable((By.XPATH, xpath))
     )
