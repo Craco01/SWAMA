@@ -1,0 +1,168 @@
+2026-10-23 11:33:25,685 [ERROR] Error enviando mensaje al grupo 'Accesorios Reporte Reparaciones': Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xef37c3]
+	(No symbol) [0xe00204]
+	(No symbol) [0xc0c3f0]
+	(No symbol) [0xc576d6]
+	(No symbol) [0xc578ab]
+	(No symbol) [0xca1ba2]
+	(No symbol) [0xc7a144]
+	(No symbol) [0xc9f413]
+	(No symbol) [0xc79e96]
+	(No symbol) [0xc4c4aa]
+	(No symbol) [0xc4d194]
+	(No symbol) [0x13aa7b4]
+	(No symbol) [0x13c7cdb]
+	(No symbol) [0x1043de2]
+	(No symbol) [0x104c0a3]
+	(No symbol) [0xe0e4d8]
+	(No symbol) [0xe094a8]
+	(No symbol) [0xe09655]
+	(No symbol) [0xdf5a57]
+	(No symbol) [0x76f6fcc9]
+	(No symbol) [0x773c82ae]
+	(No symbol) [0x773c827e]
+
+2026-10-23 11:33:54,553 [ERROR] Error enviando mensaje al grupo 'Reparaciones MVSRL (Asignación y reporte de OM)': Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=155.0.8059.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xef37c3]
+	(No symbol) [0xe00204]
+	(No symbol) [0xc0c3f0]
+	(No symbol) [0xbfb5ce]
+	(No symbol) [0xc19ea9]
+	(No symbol) [0xc80f4c]
+	(No symbol) [0xc9ee59]
+	(No symbol) [0xc79e96]
+	(No symbol) [0xc4c4aa]
+	(No symbol) [0xc4d194]
+	(No symbol) [0x13aa7b4]
+	(No symbol) [0x13c7cdb]
+	(No symbol) [0x1043de2]
+	(No symbol) [0x104c0a3]
+	(No symbol) [0xe0e4d8]
+	(No symbol) [0xe094a8]
+	(No symbol) [0xe09655]
+	(No symbol) [0xdf5a57]
+	(No symbol) [0x76f6fcc9]
+	(No symbol) [0x773c82ae]
+	(No symbol) [0x773c827e]
+
+2026-10-23 11:33:58,301 [ERROR] Error enviando mensaje al grupo 'Accesorios Reporte Reparaciones': Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xef37c3]
+	(No symbol) [0xe00204]
+	(No symbol) [0xc0c22e]
+	(No symbol) [0xc4b777]
+	(No symbol) [0xc79fb6]
+	(No symbol) [0xc75293]
+	(No symbol) [0xc74c60]
+	(No symbol) [0xbdeed1]
+	(No symbol) [0xbdf483]
+	(No symbol) [0xbdf9cd]
+	(No symbol) [0x13aa7b4]
+	(No symbol) [0x13c7cdb]
+	(No symbol) [0x1043de2]
+	(No symbol) [0x104c0a3]
+	(No symbol) [0xe0e4d8]
+	(No symbol) [0xbde620]
+	(No symbol) [0xbddd12]
+	(No symbol) [0x141a961]
+	(No symbol) [0x76f6fcc9]
+	(No symbol) [0x773c82ae]
+	(No symbol) [0x773c827e]
+
+2026-10-23 11:34:01,311 [ERROR] Error enviando mensaje al grupo 'Reparaciones MVSRL (Asignación y reporte de OM)': Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xef37c3]
+	(No symbol) [0xe00204]
+	(No symbol) [0xc0c22e]
+	(No symbol) [0xc4b777]
+	(No symbol) [0xc79fb6]
+	(No symbol) [0xc75293]
+	(No symbol) [0xc74c60]
+	(No symbol) [0xbdeed1]
+	(No symbol) [0xbdf483]
+	(No symbol) [0xbdf9cd]
+	(No symbol) [0x13aa7b4]
+	(No symbol) [0x13c7cdb]
+	(No symbol) [0x1043de2]
+	(No symbol) [0x104c0a3]
+	(No symbol) [0xe0e4d8]
+	(No symbol) [0xbde620]
+	(No symbol) [0xbddd12]
+	(No symbol) [0x141a961]
+	(No symbol) [0x76f6fcc9]
+	(No symbol) [0x773c82ae]
+	(No symbol) [0x773c827e]
+
+2026-10-23 11:34:56,114 [INFO] WAOM2 omitido: la solicitud 8550 ya fue enviada por WAOM.
+2026-10-24 06:07:07,189 [INFO] WAOM2 omitido: la solicitud 8552 ya fue enviada por WAOM.
+2026-10-24 06:07:07,219 [INFO] WAOM2 omitido: la solicitud 8553 ya fue enviada por WAOM.
+2026-10-24 06:08:44,802 [WARNING] Sin respuesta para 595971652128; refrescando WhatsApp Web.
+2026-10-24 06:09:06,754 [WARNING] Contacto 595971652128 omitido: WhatsApp no respondió.
+2026-10-24 09:58:29,635 [ERROR] Error enviando mensaje al grupo 'Accesorios Reporte Reparaciones': Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x13b37c3]
+	(No symbol) [0x12c0204]
+	(No symbol) [0x10cc3f0]
+	(No symbol) [0x11176d6]
+	(No symbol) [0x11178ab]
+	(No symbol) [0x1161ba2]
+	(No symbol) [0x113a144]
+	(No symbol) [0x115f413]
+	(No symbol) [0x1139e96]
+	(No symbol) [0x110c4aa]
+	(No symbol) [0x110d194]
+	(No symbol) [0x186a7b4]
+	(No symbol) [0x1887cdb]
+	(No symbol) [0x1503de2]
+	(No symbol) [0x150c0a3]
+	(No symbol) [0x12ce4d8]
+	(No symbol) [0x12c94a8]
+	(No symbol) [0x12c9655]
+	(No symbol) [0x12b5a57]
+	(No symbol) [0x7793fcc9]
+	(No symbol) [0x77bd82ae]
+	(No symbol) [0x77bd827e]
+
+2026-10-24 09:59:03,085 [ERROR] Error enviando mensaje al grupo 'Accesorios Reporte Reparaciones': Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x13b37c3]
+	(No symbol) [0x12c0204]
+	(No symbol) [0x10cc3f0]
+	(No symbol) [0x11176d6]
+	(No symbol) [0x11178ab]
+	(No symbol) [0x1161ba2]
+	(No symbol) [0x113a144]
+	(No symbol) [0x115f413]
+	(No symbol) [0x1139e96]
+	(No symbol) [0x110c4aa]
+	(No symbol) [0x110d194]
+	(No symbol) [0x186a7b4]
+	(No symbol) [0x1887cdb]
+	(No symbol) [0x1503de2]
+	(No symbol) [0x150c0a3]
+	(No symbol) [0x12ce4d8]
+	(No symbol) [0x12c94a8]
+	(No symbol) [0x12c9655]
+	(No symbol) [0x12b5a57]
+	(No symbol) [0x7793fcc9]
+	(No symbol) [0x77bd82ae]
+	(No symbol) [0x77bd827e]
+
+2026-10-24 10:01:23,281 [WARNING] XPATH original sin resultado, usando alternativa: //div[@id="side"]//input[@role="textbox" or @type="text" or @type="search"] | //div[@id="side"]//div[@contenteditable="true"][@role="textbox"]
+2026-10-24 10:01:36,409 [WARNING] XPATH original sin resultado, usando alternativa: //footer//div[@contenteditable="true"][@role="textbox"]
+2026-10-24 10:01:52,727 [WARNING] XPATH original sin resultado, usando alternativa: //div[@id="side"]//input[@role="textbox" or @type="text" or @type="search"] | //div[@id="side"]//div[@contenteditable="true"][@role="textbox"]
+2026-10-24 10:02:05,750 [WARNING] XPATH original sin resultado, usando alternativa: //footer//div[@contenteditable="true"][@role="textbox"]
+2026-10-24 10:02:11,484 [INFO] WAOM2 omitido: la solicitud 8554 ya fue enviada por WAOM.
+2026-10-24 11:13:56,590 [WARNING] Sin respuesta para 595971652128; refrescando WhatsApp Web.
+2026-10-24 11:14:18,611 [WARNING] Contacto 595971652128 omitido: WhatsApp no respondió.
+2026-10-24 11:14:18,611 [WARNING] WAOM: no se envió al contacto de 8582TORCHA MIG SUMIG N° 15.json; pasa a Reportado.
