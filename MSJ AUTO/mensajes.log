@@ -2299,3 +2299,223 @@ Symbols not available. Dumping unresolved backtrace:
 
 [2026-10-16 07:10:44] Navegador cerrado.
 >>>>>>> 5254b2176501122e0bb9d417032125b27ea120b1
+[2026-10-24 11:57:59] Inicio de la automatización.
+[2026-10-24 11:58:16] Mensaje(s) enviado(s) correctamente.
+[2026-10-24 11:58:20] Navegador cerrado.
+[2026-10-26 06:55:03] Inicio de la automatización.
+[2026-10-26 06:56:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 06:56:19] Navegador cerrado.
+[2026-10-26 07:10:03] Inicio de la automatización.
+[2026-10-26 07:11:02] Alternativa sin resultado; usando XPath original.
+[2026-10-26 07:11:13] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 07:11:19] Navegador cerrado.
+[2026-10-26 11:57:59] Inicio de la automatización.
+[2026-10-26 11:58:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 11:58:19] Navegador cerrado.
+[2026-10-26 12:57:02] Inicio de la automatización.
+[2026-10-26 12:57:17] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 12:57:19] Navegador cerrado.
+[2026-10-26 16:45:03] Inicio de la automatización.
+[2026-10-26 16:45:44] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 16:45:46] Navegador cerrado.
+[2026-10-26 17:00:02] Inicio de la automatización.
+[2026-10-26 17:00:24] Alternativa sin resultado; usando XPath original.
+[2026-10-26 17:00:32] Mensaje(s) enviado(s) correctamente.
+[2026-10-26 17:00:36] Navegador cerrado.
+[2026-10-27 06:55:02] Inicio de la automatización.
+[2026-10-27 06:56:13] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 06:56:16] Navegador cerrado.
+[2026-10-27 07:10:02] Inicio de la automatización.
+[2026-10-27 07:10:22] Alternativa sin resultado; usando XPath original.
+[2026-10-27 07:10:55] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 07:10:58] Navegador cerrado.
+[2026-10-27 11:57:59] Inicio de la automatización.
+[2026-10-27 11:58:14] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 11:58:17] Navegador cerrado.
+[2026-10-27 12:57:02] Inicio de la automatización.
+[2026-10-27 12:57:19] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 12:57:23] Navegador cerrado.
+[2026-10-27 16:45:02] Inicio de la automatización.
+[2026-10-27 16:45:44] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 16:45:49] Navegador cerrado.
+[2026-10-27 17:00:02] Inicio de la automatización.
+[2026-10-27 17:00:31] Mensaje(s) enviado(s) correctamente.
+[2026-10-27 17:00:34] Navegador cerrado.
+[2026-10-28 06:55:02] Inicio de la automatización.
+[2026-10-28 06:56:11] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 06:56:14] Navegador cerrado.
+[2026-10-28 07:10:02] Inicio de la automatización.
+[2026-10-28 07:10:59] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 07:11:02] Navegador cerrado.
+[2026-10-28 11:57:59] Inicio de la automatización.
+[2026-10-28 11:58:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 11:58:18] Navegador cerrado.
+[2026-10-28 12:57:02] Inicio de la automatización.
+[2026-10-28 12:57:17] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 12:57:19] Navegador cerrado.
+[2026-10-28 16:45:02] Inicio de la automatización.
+[2026-10-28 16:45:46] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 16:45:49] Navegador cerrado.
+[2026-10-28 17:00:02] Inicio de la automatización.
+[2026-10-28 17:01:09] Mensaje(s) enviado(s) correctamente.
+[2026-10-28 17:01:12] Navegador cerrado.
+[2026-10-29 06:55:03] Inicio de la automatización.
+[2026-10-29 06:56:12] Mensaje(s) enviado(s) correctamente.
+[2026-10-29 06:56:14] Navegador cerrado.
+[2026-10-29 07:10:03] Inicio de la automatización.
+[2026-10-29 07:10:25] Alternativa sin resultado; usando XPath original.
+[2026-10-29 07:10:55] ERROR: Traceback (most recent call last):
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 200, in ejecutar_automatizacion
+    accion(driver)
+    ~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 379, in accion
+    abrir_grupo(driver)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 89, in abrir_grupo
+    buscador = esperar_elemento_clickable(
+        driver,
+        XPATH_BUSCADOR
+    )
+  File "C:\Users\Christian Redes\OneDrive - Grupo MV\Escritorio\Reportes WA con Selenium\MSJ AUTO\mensajes.py", line 52, in esperar_elemento_clickable
+    return WebDriverWait(driver, timeout).until(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.element_to_be_clickable((By.XPATH, xpath))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Christian Redes\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x860913]
+	(No symbol) [0x76aec4]
+	(No symbol) [0x56c360]
+	(No symbol) [0x5b7b76]
+	(No symbol) [0x5b7d4b]
+	(No symbol) [0x602202]
+	(No symbol) [0x5da7a4]
+	(No symbol) [0x5ffa73]
+	(No symbol) [0x5da4f6]
+	(No symbol) [0x5ac85a]
+	(No symbol) [0x5ad6e4]
+	(No symbol) [0xd20f64]
+	(No symbol) [0xd3f4ab]
+	(No symbol) [0x9b6d92]
+	(No symbol) [0x9bf2c3]
+	(No symbol) [0x7794c8]
+	(No symbol) [0x774038]
+	(No symbol) [0x7741e5]
+	(No symbol) [0x760587]
+	(No symbol) [0x7785fcc9]
+	(No symbol) [0x77ab82ae]
+	(No symbol) [0x77ab827e]
+
+
+[2026-10-29 07:10:59] Navegador cerrado.
+[2026-10-29 11:57:59] Inicio de la automatización.
+[2026-10-29 11:58:17] Mensaje(s) enviado(s) correctamente.
+[2026-10-29 11:58:19] Navegador cerrado.
+[2026-10-29 12:57:02] Inicio de la automatización.
+[2026-10-29 12:57:22] Mensaje(s) enviado(s) correctamente.
+[2026-10-29 12:57:25] Navegador cerrado.
+[2026-10-29 16:45:02] Inicio de la automatización.
+[2026-10-29 16:45:44] Mensaje(s) enviado(s) correctamente.
+[2026-10-29 16:45:46] Navegador cerrado.
+[2026-10-29 17:01:55] Inicio de la automatización.
+[2026-10-29 17:02:21] Mensaje(s) enviado(s) correctamente.
+[2026-10-29 17:02:25] Navegador cerrado.
+[2026-10-30 06:55:02] Inicio de la automatización.
+[2026-10-30 06:56:11] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 06:56:13] Navegador cerrado.
+[2026-10-30 07:10:02] Inicio de la automatización.
+[2026-10-30 07:10:57] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 07:11:01] Navegador cerrado.
+[2026-10-30 11:58:00] Inicio de la automatización.
+[2026-10-30 11:58:16] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 11:58:19] Navegador cerrado.
+[2026-10-30 12:57:03] Inicio de la automatización.
+[2026-10-30 12:57:21] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 12:57:39] Navegador cerrado.
+[2026-10-30 16:45:02] Inicio de la automatización.
+[2026-10-30 16:45:45] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 16:45:48] Navegador cerrado.
+[2026-10-30 17:00:02] Inicio de la automatización.
+[2026-10-30 17:00:25] Alternativa sin resultado; usando XPath original.
+[2026-10-30 17:00:34] Mensaje(s) enviado(s) correctamente.
+[2026-10-30 17:00:38] Navegador cerrado.
+[2026-10-31 06:55:02] Inicio de la automatización.
+[2026-10-31 06:56:15] Mensaje(s) enviado(s) correctamente.
+[2026-10-31 06:56:18] Navegador cerrado.
+[2026-10-31 07:10:02] Inicio de la automatización.
+[2026-10-31 07:10:57] Mensaje(s) enviado(s) correctamente.
+[2026-10-31 07:11:00] Navegador cerrado.
+[2026-10-31 07:30:03] Inicio de la automatización.
+[2026-10-31 07:30:25] Alternativa sin resultado; usando XPath original.
+[2026-10-31 07:31:06] Mensaje(s) enviado(s) correctamente.
+[2026-10-31 07:31:10] Navegador cerrado.
+[2026-10-31 11:57:58] Inicio de la automatización.
+[2026-10-31 11:58:14] Mensaje(s) enviado(s) correctamente.
+[2026-10-31 11:58:17] Navegador cerrado.
+[2026-11-02 06:55:03] Inicio de la automatización.
+[2026-11-02 06:56:22] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 06:56:25] Navegador cerrado.
+[2026-11-02 07:10:02] Inicio de la automatización.
+[2026-11-02 07:10:25] Alternativa sin resultado; usando XPath original.
+[2026-11-02 07:11:04] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 07:11:07] Navegador cerrado.
+[2026-11-02 11:58:00] Inicio de la automatización.
+[2026-11-02 11:58:16] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 11:58:19] Navegador cerrado.
+[2026-11-02 12:57:02] Inicio de la automatización.
+[2026-11-02 12:57:19] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 12:57:25] Navegador cerrado.
+[2026-11-02 16:45:03] Inicio de la automatización.
+[2026-11-02 16:45:49] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 16:45:53] Navegador cerrado.
+[2026-11-02 17:00:05] Inicio de la automatización.
+[2026-11-02 17:01:33] Mensaje(s) enviado(s) correctamente.
+[2026-11-02 17:01:51] Navegador cerrado.
+[2026-11-03 06:55:02] Inicio de la automatización.
+[2026-11-03 06:56:17] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 06:56:21] Navegador cerrado.
+[2026-11-03 07:10:02] Inicio de la automatización.
+[2026-11-03 07:10:55] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 07:10:58] Navegador cerrado.
+[2026-11-03 11:57:59] Inicio de la automatización.
+[2026-11-03 11:58:17] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 11:58:20] Navegador cerrado.
+[2026-11-03 12:57:02] Inicio de la automatización.
+[2026-11-03 12:57:20] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 12:57:23] Navegador cerrado.
+[2026-11-03 16:45:02] Inicio de la automatización.
+[2026-11-03 16:45:47] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 16:45:49] Navegador cerrado.
+[2026-11-03 17:00:02] Inicio de la automatización.
+[2026-11-03 17:00:23] Alternativa sin resultado; usando XPath original.
+[2026-11-03 17:00:46] Mensaje(s) enviado(s) correctamente.
+[2026-11-03 17:00:49] Navegador cerrado.
+[2026-11-04 06:55:02] Inicio de la automatización.
+[2026-11-04 06:56:18] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 06:56:20] Navegador cerrado.
+[2026-11-04 07:10:02] Inicio de la automatización.
+[2026-11-04 07:10:57] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 07:11:01] Navegador cerrado.
+[2026-11-04 11:57:59] Inicio de la automatización.
+[2026-11-04 11:58:18] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 11:58:21] Navegador cerrado.
+[2026-11-04 12:57:02] Inicio de la automatización.
+[2026-11-04 12:57:19] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 12:57:22] Navegador cerrado.
+[2026-11-04 16:45:02] Inicio de la automatización.
+[2026-11-04 16:45:47] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 16:45:49] Navegador cerrado.
+[2026-11-04 17:00:02] Inicio de la automatización.
+[2026-11-04 17:00:24] Mensaje(s) enviado(s) correctamente.
+[2026-11-04 17:00:34] Navegador cerrado.
+[2026-11-05 06:55:02] Inicio de la automatización.
+[2026-11-05 06:56:14] Mensaje(s) enviado(s) correctamente.
+[2026-11-05 06:56:17] Navegador cerrado.
+[2026-11-05 07:10:02] Inicio de la automatización.
+[2026-11-05 07:10:55] Mensaje(s) enviado(s) correctamente.
+[2026-11-05 07:10:57] Navegador cerrado.

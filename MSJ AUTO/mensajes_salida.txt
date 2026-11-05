@@ -1,0 +1,135 @@
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Error durante la automatización: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x860913]
+	(No symbol) [0x76aec4]
+	(No symbol) [0x56c360]
+	(No symbol) [0x5b7b76]
+	(No symbol) [0x5b7d4b]
+	(No symbol) [0x602202]
+	(No symbol) [0x5da7a4]
+	(No symbol) [0x5ffa73]
+	(No symbol) [0x5da4f6]
+	(No symbol) [0x5ac85a]
+	(No symbol) [0x5ad6e4]
+	(No symbol) [0xd20f64]
+	(No symbol) [0xd3f4ab]
+	(No symbol) [0x9b6d92]
+	(No symbol) [0x9bf2c3]
+	(No symbol) [0x7794c8]
+	(No symbol) [0x774038]
+	(No symbol) [0x7741e5]
+	(No symbol) [0x760587]
+	(No symbol) [0x7785fcc9]
+	(No symbol) [0x77ab82ae]
+	(No symbol) [0x77ab827e]
+
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
