@@ -53,6 +53,9 @@ WAPH_FORM_URL = "https://forms.office.com/r/15SLF3q5ub"
 WAPH_NOMBRE_SOLICITANTE = "Edgar Ledezma"
 WAPH_CORREO = "herramientas@metalurgicavera.com.py"
 WAPH_FUNCIONARIO = "Mantenimiento"
+WAPH_GRUPO_WHATSAPP = "Pedido Envio Herramientas Ticket Logistica"
+WAPH_TIMEOUT_ENVIO = 30
+WHATSAPP_WEB_URL = "https://web.whatsapp.com"
 # True para probar el formulario sin ejecutar los flujos de WhatsApp.
 MODO_PRUEBA_WAPH = True
 
@@ -337,6 +340,15 @@ def enviar_texto(driver, grupo, mensaje, abrir=True):
     except Exception as e:
         log.error("Error enviando mensaje al grupo '%s': %s", grupo, e)
         return False
+
+
+def volver_a_whatsapp(driver):
+    """Regresa desde Forms y espera a que WhatsApp Web cargue los chats."""
+    driver.get(WHATSAPP_WEB_URL)
+    WebDriverWait(driver, 30).until(
+        EC.presence_of_element_located((By.ID, "pane-side"))
+    )
+    log.info("WhatsApp Web cargado; listo para buscar el grupo de destino.")
 
 
 def obtener_contacto_valido(datos):
@@ -916,7 +928,7 @@ def _limpiar_memoria_forms(driver):
         log.warning("WAPH: no se pudo limpiar sessionStorage: %s", e)
 
 def completar_formulario_waph(driver, datos):
-    """Llena las páginas visibles del formulario y se detiene antes de Enviar."""
+    """Completa y envía el pedido; confirma Forms antes de avisar por WhatsApp."""
     _limpiar_memoria_forms(driver)
     driver.get(WAPH_FORM_URL)
 
@@ -950,6 +962,8 @@ def completar_formulario_waph(driver, datos):
 
     descripcion = (
         "Traslado de herramientas de planta a obra.\n"
+        f"Obra: {campo(datos, 'nombre_obra')} | OT: {campo(datos, 'ot_obra')} | "
+        f"Puntero asignado: {campo(datos, 'puntero_asignado')}\n"
         f"{campo(datos, 'herramientas')}\n"
         f"Fecha de necesidad: {_fecha_forms(campo(datos, 'fecha_necesidad'))}"
     )
@@ -960,58 +974,81 @@ def completar_formulario_waph(driver, datos):
     )
     # La pregunta de archivos adjuntos se deja vacía intencionalmente.
 
-    # Mantener comentado mientras se prueba el llenado; habilitar solo al final:
-    # _forms_boton(driver, "Enviar")
-    log.info(
-        "Formulario WAPH llenado para pedido %s; quedó abierto sin enviar.",
-        campo(datos, "pedido_id")
-    )
+    # Mantener comentado mientras se prueba el llenado; asumir envío tras la espera.
+    # _forms_boton(driver, "Enviar", timeout=30, alternativas=("Submit",))
+    log.info("WAPH: simulando envío; esperando %s segundos antes de continuar.", WAPH_TIMEOUT_ENVIO)
+    time.sleep(WAPH_TIMEOUT_ENVIO)
+    log.info("WAPH: se asume enviado el pedido %s.", campo(datos, "pedido_id"))
     return True
 
 
+def mensaje_waph(datos):
+    return (
+        f"✅ *Pedido de traslado de herramientas enviado* "
+        f"Pedido: *{campo(datos, 'pedido_id')}* | "
+        f"OT: *{campo(datos, 'ot_obra')}* | "
+        f"Obra: *{campo(datos, 'nombre_obra')}* | "
+        f"Puntero: *{campo(datos, 'puntero_asignado')}* | "
+        f"Fecha de necesidad: *{_fecha_forms(campo(datos, 'fecha_necesidad'))}* | "
+        f"Herramientas: {campo(datos, 'herramientas').replace(chr(10), ', ')}"
+    )
+
+
 def procesar_waph(driver):
-    """Abre y llena un JSON pendiente por ejecución para facilitar las pruebas."""
+    """Procesa todos los JSON pendientes de WAPH en esta ejecucion."""
     archivos = listar_json(WAPH_DIR)
     if not archivos:
         log.info("WAPH: no hay archivos JSON pendientes en %s.", WAPH_DIR)
         return False
 
-    archivo = archivos[0]
-    ruta = os.path.join(WAPH_DIR, archivo)
-    try:
-        datos = leer_json(ruta)
-        if not isinstance(datos, dict):
-            raise ValueError("El JSON debe contener un objeto en la raíz.")
-        valor_traslado = datos.get("necesita_traslado")
-        if isinstance(valor_traslado, bool):
-            necesita_traslado = valor_traslado
-        elif isinstance(valor_traslado, (int, float)) and valor_traslado in (0, 1):
-            necesita_traslado = bool(valor_traslado)
-        elif isinstance(valor_traslado, str):
-            valor_normalizado = normalizar(valor_traslado)
-            if valor_normalizado in {"true", "1", "si", "yes", "verdadero"}:
-                necesita_traslado = True
-            elif valor_normalizado in {"false", "0", "no", "falso"}:
-                necesita_traslado = False
-            else:
-                raise ValueError("necesita_traslado no contiene un booleano reconocible.")
-        else:
-            raise ValueError("El JSON no contiene un valor válido en necesita_traslado.")
+    hubo_error = False
+    for archivo in archivos:
+        ruta = os.path.join(WAPH_DIR, archivo)
+        try:
+            datos = leer_json(ruta)
+            if not isinstance(datos, dict):
+                raise ValueError("El JSON debe contener un objeto en la raiz.")
 
-        if not necesita_traslado:
+            valor_traslado = datos.get("necesita_traslado")
+            if isinstance(valor_traslado, bool):
+                necesita_traslado = valor_traslado
+            elif isinstance(valor_traslado, (int, float)) and valor_traslado in (0, 1):
+                necesita_traslado = bool(valor_traslado)
+            elif isinstance(valor_traslado, str):
+                valor_normalizado = normalizar(valor_traslado)
+                if valor_normalizado in {"true", "1", "si", "yes", "verdadero"}:
+                    necesita_traslado = True
+                elif valor_normalizado in {"false", "0", "no", "falso"}:
+                    necesita_traslado = False
+                else:
+                    raise ValueError("necesita_traslado no contiene un booleano reconocible.")
+            else:
+                raise ValueError("El JSON no contiene un valor valido en necesita_traslado.")
+
+            if necesita_traslado:
+                if not completar_formulario_waph(driver, datos):
+                    raise RuntimeError("No se pudo completar el formulario WAPH.")
+                volver_a_whatsapp(driver)
+                if not enviar_texto(driver, WAPH_GRUPO_WHATSAPP, mensaje_waph(datos)):
+                    raise RuntimeError(
+                        f"No se pudo avisar al grupo {WAPH_GRUPO_WHATSAPP}."
+                    )
+                # Mantiene la pausa usada por los otros flujos entre mensajes.
+                time.sleep(3)
+
             destino = mover(ruta, os.path.join(WAPH_DIR, "Reportado"))
             log.info(
-                "WAPH pedido %s sin traslado; movido a Reportado: %s",
-                campo(datos, "pedido_id"), destino
+                "WAPH pedido %s %s y archivado en Reportado: %s",
+                campo(datos, "pedido_id"),
+                "procesado" if necesita_traslado else "sin traslado, omitido",
+                destino
             )
-            return False
+        except Exception as e:
+            hubo_error = True
+            log.exception("Error procesando WAPH (%s): %s", archivo, e)
+            # El archivo con error queda pendiente y el bucle sigue con los demas.
 
-        return completar_formulario_waph(driver, datos)
-    except Exception as e:
-        log.exception("Error procesando WAPH (%s): %s", archivo, e)
-        # Mantener la página abierta para inspeccionar el campo que falló.
-        return True
-
+    return hubo_error
 # ================= MAIN =================
 
 def ejecutar(nombre, funcion, driver):

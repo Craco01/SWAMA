@@ -133,3 +133,89 @@ Mensaje(s) enviado(s) correctamente.
 Navegador cerrado.
 Mensaje(s) enviado(s) correctamente.
 Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Error durante la automatización: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0x11f0cd3]
+	(No symbol) [0x10faf34]
+	(No symbol) [0xefc360]
+	(No symbol) [0xf47b76]
+	(No symbol) [0xf47d4b]
+	(No symbol) [0xf92202]
+	(No symbol) [0xf6a7a4]
+	(No symbol) [0xf8fa73]
+	(No symbol) [0xf6a4f6]
+	(No symbol) [0xf3c85a]
+	(No symbol) [0xf3d6e4]
+	(No symbol) [0x16b1174]
+	(No symbol) [0x16cf6bb]
+	(No symbol) [0x1347182]
+	(No symbol) [0x134f6b3]
+	(No symbol) [0x1109538]
+	(No symbol) [0x11040a8]
+	(No symbol) [0x1104255]
+	(No symbol) [0x10f05f7]
+	(No symbol) [0x7511fcc9]
+	(No symbol) [0x76f482ae]
+	(No symbol) [0x76f4827e]
+
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Error durante la automatización: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xc60cd3]
+	(No symbol) [0xb6af34]
+	(No symbol) [0x96c360]
+	(No symbol) [0x9b7b76]
+	(No symbol) [0x9b7d4b]
+	(No symbol) [0xa02202]
+	(No symbol) [0x9da7a4]
+	(No symbol) [0x9ffa73]
+	(No symbol) [0x9da4f6]
+	(No symbol) [0x9ac85a]
+	(No symbol) [0x9ad6e4]
+	(No symbol) [0x1121174]
+	(No symbol) [0x113f6bb]
+	(No symbol) [0xdb7182]
+	(No symbol) [0xdbf6b3]
+	(No symbol) [0xb79538]
+	(No symbol) [0xb740a8]
+	(No symbol) [0xb74255]
+	(No symbol) [0xb605f7]
+	(No symbol) [0x7521fcc9]
+	(No symbol) [0x772582ae]
+	(No symbol) [0x7725827e]
+
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
+Mensaje(s) enviado(s) correctamente.
+Navegador cerrado.
