@@ -1,4 +1,2 @@
-WAOMUNI_salida.txt
-WAOMUNI.log
-MSJ AUTO/mensajes_salida.txt
-MSJ AUTO/mensajes.log
+﻿*.log
+*.txt
