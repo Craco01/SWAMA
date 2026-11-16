@@ -50,14 +50,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # WAPH está al mismo nivel que la carpeta de este script.
 WAPH_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "WAPH"))
 WAPH_FORM_URL = "https://forms.office.com/r/15SLF3q5ub"
-WAPH_NOMBRE_SOLICITANTE = "Edgar Ledezma"
-WAPH_CORREO = "herramientas@metalurgicavera.com.py"
 WAPH_FUNCIONARIO = "Mantenimiento"
 WAPH_GRUPO_WHATSAPP = "Pedido Envio Herramientas Ticket Logistica"
-WAPH_TIMEOUT_ENVIO = 30
+WAPH_TIMEOUT_ENVIO = 10
 WHATSAPP_WEB_URL = "https://web.whatsapp.com"
 # True para probar el formulario sin ejecutar los flujos de WhatsApp.
-MODO_PRUEBA_WAPH = True
+MODO_PRUEBA_WAPH = False
 
 log = logging.getLogger("WAOMUNI")
 
@@ -948,14 +946,14 @@ def completar_formulario_waph(driver, datos):
         )
 
     # Página 1: datos personales fijos.
-    _forms_campo_texto(driver, "Nombre y Apellido", WAPH_NOMBRE_SOLICITANTE)
+    _forms_campo_texto(driver, "Nombre y Apellido", campo(datos, "solicitante_nombre"))
     _forms_seleccionar_opcion(
         driver, "Funcionario que realiza el pedido", WAPH_FUNCIONARIO
     )
     _forms_boton(driver, "Siguiente")
 
     # Página 2: detalle del pedido.
-    _forms_campo_texto(driver, "Correo Electronico", WAPH_CORREO)
+    _forms_campo_texto(driver, "Correo Electronico", campo(datos, "solicitante_email"))
     _forms_campo_texto(driver, "Nro. OT", campo(datos, "ot_obra"))
     _forms_campo_texto(driver, "Nombre de la Obra", campo(datos, "nombre_obra"))
     _forms_seleccionar_opcion(driver, "Tipo de Pedido", "Traslado de Herramientas")
