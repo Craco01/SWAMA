@@ -13,6 +13,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -45,6 +46,16 @@ ESPERA_CONTACTO = 20
 ABORTAR_SI_NO_ENCUENTRA_GRUPO = True
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# WAPH está al mismo nivel que la carpeta de este script.
+WAPH_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "WAPH"))
+WAPH_FORM_URL = "https://forms.office.com/r/15SLF3q5ub"
+WAPH_FUNCIONARIO = "Mantenimiento"
+WAPH_GRUPO_WHATSAPP = "Pedido Envio Herramientas Ticket Logistica"
+WAPH_TIMEOUT_ENVIO = 5
+WHATSAPP_WEB_URL = "https://web.whatsapp.com"
+# True para probar el formulario sin ejecutar los flujos de WhatsApp.
+MODO_PRUEBA_WAPH = False
 
 log = logging.getLogger("WAOMUNI")
 
@@ -167,6 +178,7 @@ def iniciar_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
+    options.add_experimental_option("detach", True)
 
     driver = webdriver.Chrome(service=crear_servicio(), options=options)
 
@@ -326,6 +338,15 @@ def enviar_texto(driver, grupo, mensaje, abrir=True):
     except Exception as e:
         log.error("Error enviando mensaje al grupo '%s': %s", grupo, e)
         return False
+
+
+def volver_a_whatsapp(driver):
+    """Regresa desde Forms y espera a que WhatsApp Web cargue los chats."""
+    driver.get(WHATSAPP_WEB_URL)
+    WebDriverWait(driver, 30).until(
+        EC.presence_of_element_located((By.ID, "pane-side"))
+    )
+    log.info("WhatsApp Web cargado; listo para buscar el grupo de destino.")
 
 
 def obtener_contacto_valido(datos):
@@ -672,6 +693,371 @@ def procesar_waom3(driver):
                 archivo, en_proceso
             )
 
+# ================= FORMULARIO WAPH =================
+
+def _texto_normalizado(texto):
+    return normalizar(" ".join(str(texto or "").split()))
+
+
+def _esperar_pregunta_forms(driver, texto, timeout=20):
+    """Busca el bloque de pregunta de Microsoft Forms por el texto visible."""
+    objetivo = _texto_normalizado(texto)
+
+    def buscar(_driver):
+        selectores = (
+            "[data-automation-id='questionItem']",
+            "[data-automation-id='question']",
+            "div[role='group']",
+        )
+        for selector in selectores:
+            for elemento in _driver.find_elements(By.CSS_SELECTOR, selector):
+                if objetivo in _texto_normalizado(elemento.text):
+                    return elemento
+        return False
+
+    return WebDriverWait(driver, timeout).until(buscar)
+
+
+def _forms_campo_texto(driver, pregunta, valor):
+    bloque = _esperar_pregunta_forms(driver, pregunta)
+    entradas = bloque.find_elements(
+        By.CSS_SELECTOR,
+        "input:not([type='hidden']):not([type='radio']):not([type='checkbox']), textarea"
+    )
+    if not entradas:
+        raise RuntimeError(f"No se encontró el campo de texto para: {pregunta}")
+    entrada = entradas[0]
+    entrada.clear()
+    entrada.send_keys(str(valor))
+
+
+def _forms_seleccionar_opcion(driver, pregunta, opcion):
+    bloque = _esperar_pregunta_forms(driver, pregunta)
+    objetivo_posicional = (
+        _texto_normalizado(pregunta) == _texto_normalizado("Funcionario que realiza el pedido")
+        and _texto_normalizado(opcion) == _texto_normalizado("Mantenimiento")
+    )
+
+    # "Tipo de Pedido" es una pregunta de radio, no un desplegable.
+    if _texto_normalizado(pregunta) == _texto_normalizado("Tipo de Pedido"):
+        etiquetas = bloque.find_elements(
+            By.XPATH,
+            ".//*[@role='radio'] | .//label | .//input[@type='radio'] | .//*[@data-automation-id='choiceItem']"
+        )
+        for etiqueta in etiquetas:
+            try:
+                texto_opcion = driver.execute_script(
+                    """const el = arguments[0];
+                    const label = (el.labels && el.labels[0]) || el.closest("label");
+                    return (label && (label.innerText || label.textContent)) ||
+                        el.innerText || el.textContent || (el.parentElement && el.parentElement.innerText) || "";""",
+                    etiqueta
+                )
+                if _texto_normalizado(texto_opcion) != _texto_normalizado(opcion):
+                    continue
+                destino = driver.execute_script(
+                    """const el = arguments[0];
+                    return el.closest("label, [role='radio'], [data-automation-id='choiceItem']") ||
+                        (el.labels && el.labels[0]) || el.parentElement || el;""",
+                    etiqueta
+                )
+                destino.click()
+                log.info("Forms: opción de radio '%s' seleccionada en '%s'.", opcion, pregunta)
+                return
+            except Exception:
+                continue
+        log.error("Forms: no se encontró opción de radio '%s' en '%s'. Opciones visibles: %s",
+                  opcion, pregunta, " | ".join(bloque.text.split())[:500])
+        raise RuntimeError(f"No se encontró la opción de radio '{opcion}' en: {pregunta}")
+
+    # Si Selenium ve un <select> nativo, navegar a la opción 25 con teclado.
+    selects = bloque.find_elements(By.TAG_NAME, "select")
+    if not selects and objetivo_posicional:
+        # Forms puede montar el <select> fuera del contenedor que contiene el texto.
+        selects = [e for e in driver.find_elements(By.TAG_NAME, "select") if e.is_displayed()]
+    if selects:
+        from selenium.webdriver.support.ui import Select
+        selector = Select(selects[0])
+        etiquetas = [_texto_normalizado(item.text) for item in selector.options]
+        if objetivo_posicional and len(etiquetas) >= 25:
+            if etiquetas[23].endswith("proyectos") and etiquetas[24].endswith("mantenimiento"):
+                selects[0].click()
+                selects[0].send_keys(Keys.HOME)
+                for _ in range(24):
+                    selects[0].send_keys(Keys.ARROW_DOWN)
+                selects[0].send_keys(Keys.ENTER)
+                elegido = _texto_normalizado(selector.first_selected_option.text)
+                if elegido.endswith("mantenimiento"):
+                    log.info("Forms: select nativo, Mantenimiento seleccionado con teclado (posición 25).")
+                    return
+                raise RuntimeError("El select quedó en otra opción: " + elegido)
+            log.error("Forms: posiciones 24/25 del select no coinciden: %s", etiquetas[23:25])
+        try:
+            selector.select_by_visible_text(opcion)
+            return
+        except Exception:
+            pass
+
+    # Desplegable personalizado: localizar el control por su rol, atributo o placeholder.
+    controles = bloque.find_elements(
+        By.CSS_SELECTOR,
+        "[role='combobox'], [aria-haspopup='listbox'], [data-automation-id*='dropdown'], input[placeholder]"
+    )
+    if not controles:
+        for elemento in bloque.find_elements(By.XPATH, ".//*"):
+            try:
+                etiqueta = " ".join((elemento.text or "", elemento.get_attribute("placeholder") or "",
+                                     elemento.get_attribute("aria-label") or "")).strip()
+                if _texto_normalizado(etiqueta) == _texto_normalizado("Selecciona la respuesta"):
+                    controles = [elemento]
+                    break
+            except Exception:
+                continue
+    if not controles and objetivo_posicional:
+        controles = driver.find_elements(
+            By.XPATH,
+            "//*[@role='combobox' or @aria-haspopup='listbox' or @data-automation-id='dropdown' "
+            "or @placeholder='Selecciona la respuesta']"
+        )
+        controles = [e for e in controles if e.is_displayed()]
+
+    if controles:
+        control = controles[0]
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", control)
+        try:
+            control.click()
+        except Exception:
+            driver.execute_script("arguments[0].click();", control)
+        if objetivo_posicional:
+            # La lista tiene Proyectos en 24 y Mantenimiento en 25.
+            # Tras abrir el desplegable, el foco pasa al select/listbox activo.
+            acciones = ActionChains(driver)
+            acciones.send_keys(Keys.HOME).perform()
+            for _ in range(24):
+                ActionChains(driver).send_keys(Keys.ARROW_DOWN).perform()
+            ActionChains(driver).send_keys(Keys.ENTER).perform()
+            time.sleep(0.3)
+            seleccionado = _texto_normalizado(control.text or control.get_attribute("value") or "")
+            contenido = _texto_normalizado(bloque.text)
+            if "mantenimiento" in seleccionado or "mantenimiento" in contenido:
+                log.info("Forms: select personalizado, Mantenimiento seleccionado con teclado (posición 25).")
+                return
+            log.error("Forms: el select recibió teclado pero no confirmó Mantenimiento. Control='%s'; pregunta='%s'",
+                      seleccionado, contenido[:500])
+            raise RuntimeError("El select no confirmó la selección de Mantenimiento en la posición 25.")
+
+        opcion_xpath = (
+            "//*[@role='option' and normalize-space(.)=" + literal_xpath(opcion) + "]"
+            " | //button[normalize-space(.)=" + literal_xpath(opcion) + "]"
+        )
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, opcion_xpath))
+        ).click()
+        return
+
+    log.error("Forms: no se encontró el control select para '%s'. Texto del bloque: %s",
+              pregunta, " | ".join(bloque.text.split())[:700])
+    raise RuntimeError(f"No se encontró el select para: {pregunta}")
+def _forms_boton(driver, texto, timeout=20, alternativas=None):
+    """Pulsa un botón de Forms comparando texto visible sin depender del idioma."""
+    buscados = {_texto_normalizado(texto)}
+    buscados.update(_texto_normalizado(item) for item in (alternativas or []))
+
+    def encontrar(_driver):
+        for boton in _driver.find_elements(By.XPATH, "//button | //*[@role='button']"):
+            if not boton.is_displayed() or not boton.is_enabled():
+                continue
+            etiquetas = (boton.text, boton.get_attribute("aria-label"), boton.get_attribute("title"))
+            if any(_texto_normalizado(etiqueta) in buscados for etiqueta in etiquetas if etiqueta):
+                return boton
+        return False
+
+    try:
+        WebDriverWait(driver, timeout).until(encontrar).click()
+    except TimeoutException:
+        botones = []
+        for boton in driver.find_elements(By.XPATH, "//button | //*[@role='button']"):
+            if boton.is_displayed():
+                etiqueta = boton.text or boton.get_attribute("aria-label") or boton.get_attribute("title")
+                botones.append(_texto_normalizado(etiqueta))
+        log.error(
+            "Forms: no se encontró botón %s. URL=%s; título=%s; botones visibles=%s; texto=%s",
+            sorted(buscados), driver.current_url, driver.title, botones[:20],
+            " ".join(driver.find_element(By.TAG_NAME, "body").text.split())[:700]
+        )
+        raise
+def _fecha_forms(fecha):
+    """Convierte la fecha de WAPH al formato mostrado por Forms (d/M/yyyy)."""
+    if not fecha:
+        return ""
+    try:
+        fecha_obj = datetime.strptime(fecha[:10], "%Y-%m-%d")
+        return f"{fecha_obj.day}/{fecha_obj.month}/{fecha_obj.year}"
+    except (ValueError, TypeError):
+        return fecha
+
+
+def _limpiar_memoria_forms(driver):
+    """Borra el estado local de Forms en sus dominios y conserva las cookies."""
+    origenes = ("https://forms.office.com", "https://forms.cloud.microsoft")
+    for origen in origenes:
+        try:
+            driver.execute_cdp_cmd(
+                "Storage.clearDataForOrigin",
+                {
+                    "origin": origen,
+                    "storageTypes": "local_storage,indexeddb,cache_storage,service_workers",
+                },
+            )
+            log.info("WAPH: almacenamiento local de %s limpiado; cookies conservadas.", origen)
+        except Exception as e:
+            log.warning("WAPH: no se pudo limpiar %s con CDP: %s", origen, e)
+
+    # sessionStorage pertenece al origen activo; Forms hoy redirige al dominio cloud.microsoft.
+    try:
+        driver.get("https://forms.cloud.microsoft/")
+        origen_activo = driver.execute_script("return window.location.origin")
+        if origen_activo in origenes:
+            driver.execute_script("window.localStorage.clear(); window.sessionStorage.clear();")
+            log.info("WAPH: localStorage y sessionStorage limpiados en %s.", origen_activo)
+        else:
+            log.warning("WAPH: la página de Forms redirigió a %s; no se borró el almacenamiento de otro sitio.", origen_activo)
+    except Exception as e:
+        log.warning("WAPH: no se pudo limpiar sessionStorage: %s", e)
+
+def completar_formulario_waph(driver, datos):
+    """Completa y envía el pedido; confirma Forms antes de avisar por WhatsApp."""
+    _limpiar_memoria_forms(driver)
+    driver.get(WAPH_FORM_URL)
+
+    # Algunos formularios muestran portada; otros abren directamente las preguntas.
+    try:
+        WebDriverWait(driver, 8).until(
+            lambda d: d.find_elements(
+                By.CSS_SELECTOR,
+                "[data-automation-id='questionItem'], [data-automation-id='question']"
+            )
+        )
+        log.info("WAPH: Forms abrió directamente las preguntas; se omite la portada.")
+    except TimeoutException:
+        _forms_boton(
+            driver, "Comenzar", timeout=60,
+            alternativas=("Empezar ahora", "Empezar", "Iniciar", "Rellenar ahora", "Fill out now", "Start now", "Continuar")
+        )
+
+    # Página 1: datos personales fijos.
+    _forms_campo_texto(driver, "Nombre y Apellido", campo(datos, "solicitante_nombre"))
+    _forms_seleccionar_opcion(
+        driver, "Funcionario que realiza el pedido", WAPH_FUNCIONARIO
+    )
+    _forms_boton(driver, "Siguiente")
+
+    # Página 2: detalle del pedido.
+    _forms_campo_texto(driver, "Correo Electronico", campo(datos, "solicitante_email"))
+    _forms_campo_texto(driver, "Nro. OT", campo(datos, "ot_obra"))
+    _forms_campo_texto(driver, "Nombre de la Obra", campo(datos, "nombre_obra"))
+    _forms_seleccionar_opcion(driver, "Tipo de Pedido", "Traslado de Herramientas")
+
+    descripcion = (
+        "Traslado de herramientas de planta a obra.\n"
+        f"Obra: {campo(datos, 'nombre_obra')} | OT: {campo(datos, 'ot_obra')} | "
+        f"Puntero asignado: {campo(datos, 'puntero_asignado')}\n"
+        f"{campo(datos, 'herramientas')}\n"
+        f"Fecha de necesidad: {_fecha_forms(campo(datos, 'fecha_necesidad'))}"
+    )
+    _forms_campo_texto(driver, "Descripción Detalle del Pedido", descripcion)
+    _forms_campo_texto(
+        driver, "Fecha de Necesidad del Pedido",
+        _fecha_forms(campo(datos, "fecha_necesidad"))
+    )
+    # La pregunta de archivos adjuntos se deja vacía intencionalmente.
+
+    # Mantener comentado hasta nuevo aviso; asumir envío tras la espera.
+    # _forms_boton(driver, "Enviar", timeout=30, alternativas=("Submit",))
+    log.info("WAPH: simulando envío; esperando %s segundos antes de continuar.", WAPH_TIMEOUT_ENVIO)
+    time.sleep(WAPH_TIMEOUT_ENVIO)
+    log.info("WAPH: se asume enviado el pedido %s.", campo(datos, "pedido_id"))
+    return True
+
+
+def mensaje_waph(datos, necesita_traslado):
+    estado_traslado = (
+        "🚚📣 *SE SOLICITÓ EL TRASLADO A LOGÍSTICA*"
+        if necesita_traslado
+        else "ℹ️ *NO FUE REQUERIDO PEDIDO DE TRASLADO*"
+    )
+    mensaje = (
+        f"📦 *PEDIDO DE HERRAMIENTAS* | "
+        f"Pedido: *{campo(datos, 'pedido_id')}* | "
+        f"OT: *{campo(datos, 'ot_obra')}* | "
+        f"Obra: *{campo(datos, 'nombre_obra')}* | "
+        f"Puntero: *{campo(datos, 'puntero_asignado')}* | "
+        f"Fecha de necesidad: *{_fecha_forms(campo(datos, 'fecha_necesidad'))}* | "
+        f"Herramientas: {', '.join(campo(datos, 'herramientas').splitlines())} | "
+        f"{estado_traslado}"
+    )
+    return " ".join(mensaje.split())
+
+
+def procesar_waph(driver):
+    """Procesa todos los JSON pendientes de WAPH en esta ejecucion."""
+    archivos = listar_json(WAPH_DIR)
+    if not archivos:
+        log.info("WAPH: no hay archivos JSON pendientes en %s.", WAPH_DIR)
+        return False
+
+    hubo_error = False
+    for archivo in archivos:
+        ruta = os.path.join(WAPH_DIR, archivo)
+        try:
+            datos = leer_json(ruta)
+            if not isinstance(datos, dict):
+                raise ValueError("El JSON debe contener un objeto en la raiz.")
+
+            valor_traslado = datos.get("necesita_traslado")
+            if isinstance(valor_traslado, bool):
+                necesita_traslado = valor_traslado
+            elif isinstance(valor_traslado, (int, float)) and valor_traslado in (0, 1):
+                necesita_traslado = bool(valor_traslado)
+            elif isinstance(valor_traslado, str):
+                valor_normalizado = normalizar(valor_traslado)
+                if valor_normalizado in {"true", "1", "si", "yes", "verdadero"}:
+                    necesita_traslado = True
+                elif valor_normalizado in {"false", "0", "no", "falso"}:
+                    necesita_traslado = False
+                else:
+                    raise ValueError("necesita_traslado no contiene un booleano reconocible.")
+            else:
+                raise ValueError("El JSON no contiene un valor valido en necesita_traslado.")
+
+            if necesita_traslado:
+                if not completar_formulario_waph(driver, datos):
+                    raise RuntimeError("No se pudo completar el formulario WAPH.")
+
+            volver_a_whatsapp(driver)
+            if not enviar_texto(
+                driver, WAPH_GRUPO_WHATSAPP,
+                mensaje_waph(datos, necesita_traslado)
+            ):
+                raise RuntimeError(
+                    f"No se pudo avisar al grupo {WAPH_GRUPO_WHATSAPP}."
+                )
+            # Mantiene la pausa usada por los otros flujos entre mensajes.
+            time.sleep(3)
+
+            destino = mover(ruta, os.path.join(WAPH_DIR, "Reportado"))
+            log.info(
+                "WAPH pedido %s %s y archivado en Reportado: %s",
+                campo(datos, "pedido_id"),
+                "procesado" if necesita_traslado else "procesado sin traslado",
+                destino
+            )
+        except Exception as e:
+            hubo_error = True
+            log.exception("Error procesando WAPH (%s): %s", archivo, e)
+            # El archivo con error queda pendiente y el bucle sigue con los demas.
+
+    return hubo_error
 # ================= MAIN =================
 
 def ejecutar(nombre, funcion, driver):
@@ -690,17 +1076,35 @@ def main():
         return
 
     driver = None
+    dejar_formulario_abierto = False
     try:
         driver = iniciar_driver()
-        ejecutar("WAOM", procesar_waom, driver)
-        ejecutar("WAOM2", procesar_waom2, driver)
-        ejecutar("WAOM3", procesar_waom3, driver)
+        if not MODO_PRUEBA_WAPH:
+            ejecutar("WAOM", procesar_waom, driver)
+            ejecutar("WAOM2", procesar_waom2, driver)
+            ejecutar("WAOM3", procesar_waom3, driver)
+        else:
+            log.info("Modo de prueba WAPH activo; los flujos WAOM/WAOM2/WAOM3 se omiten.")
+        dejar_formulario_abierto = procesar_waph(driver)
     except Exception:
         log.exception("Error fatal al iniciar WAOMUNI")
         raise
     finally:
         try:
-            cerrar_driver(driver)
+            if dejar_formulario_abierto:
+                log.info("Chrome queda abierto para revisar el formulario WAPH antes de enviarlo.")
+                if MODO_PRUEBA_WAPH:
+                    log.info("El programa esperará a que cierres la ventana de Chrome.")
+                    while True:
+                        try:
+                            if not driver.window_handles:
+                                break
+                        except Exception:
+                            break
+                        time.sleep(1)
+                    cerrar_driver(driver)
+            else:
+                cerrar_driver(driver)
         finally:
             liberar_bloqueo_instancia(mutex)
 
