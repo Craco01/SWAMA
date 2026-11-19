@@ -52,7 +52,7 @@ WAPH_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "WAPH"))
 WAPH_FORM_URL = "https://forms.office.com/r/15SLF3q5ub"
 WAPH_FUNCIONARIO = "Mantenimiento"
 WAPH_GRUPO_WHATSAPP = "Pedido Envio Herramientas Ticket Logistica"
-WAPH_TIMEOUT_ENVIO = 10
+WAPH_TIMEOUT_ENVIO = 5
 WHATSAPP_WEB_URL = "https://web.whatsapp.com"
 # True para probar el formulario sin ejecutar los flujos de WhatsApp.
 MODO_PRUEBA_WAPH = False
@@ -980,16 +980,23 @@ def completar_formulario_waph(driver, datos):
     return True
 
 
-def mensaje_waph(datos):
-    return (
-        f"✅ *Pedido de traslado de herramientas enviado* "
+def mensaje_waph(datos, necesita_traslado):
+    estado_traslado = (
+        "🚚📣 *SE SOLICITÓ EL TRASLADO A LOGÍSTICA*"
+        if necesita_traslado
+        else "ℹ️ *NO FUE REQUERIDO PEDIDO DE TRASLADO*"
+    )
+    mensaje = (
+        f"📦 *PEDIDO DE HERRAMIENTAS* | "
         f"Pedido: *{campo(datos, 'pedido_id')}* | "
         f"OT: *{campo(datos, 'ot_obra')}* | "
         f"Obra: *{campo(datos, 'nombre_obra')}* | "
         f"Puntero: *{campo(datos, 'puntero_asignado')}* | "
         f"Fecha de necesidad: *{_fecha_forms(campo(datos, 'fecha_necesidad'))}* | "
-        f"Herramientas: {campo(datos, 'herramientas').replace(chr(10), ', ')}"
+        f"Herramientas: {', '.join(campo(datos, 'herramientas').splitlines())} | "
+        f"{estado_traslado}"
     )
+    return " ".join(mensaje.split())
 
 
 def procesar_waph(driver):
@@ -1026,19 +1033,23 @@ def procesar_waph(driver):
             if necesita_traslado:
                 if not completar_formulario_waph(driver, datos):
                     raise RuntimeError("No se pudo completar el formulario WAPH.")
-                volver_a_whatsapp(driver)
-                if not enviar_texto(driver, WAPH_GRUPO_WHATSAPP, mensaje_waph(datos)):
-                    raise RuntimeError(
-                        f"No se pudo avisar al grupo {WAPH_GRUPO_WHATSAPP}."
-                    )
-                # Mantiene la pausa usada por los otros flujos entre mensajes.
-                time.sleep(3)
+
+            volver_a_whatsapp(driver)
+            if not enviar_texto(
+                driver, WAPH_GRUPO_WHATSAPP,
+                mensaje_waph(datos, necesita_traslado)
+            ):
+                raise RuntimeError(
+                    f"No se pudo avisar al grupo {WAPH_GRUPO_WHATSAPP}."
+                )
+            # Mantiene la pausa usada por los otros flujos entre mensajes.
+            time.sleep(3)
 
             destino = mover(ruta, os.path.join(WAPH_DIR, "Reportado"))
             log.info(
                 "WAPH pedido %s %s y archivado en Reportado: %s",
                 campo(datos, "pedido_id"),
-                "procesado" if necesita_traslado else "sin traslado, omitido",
+                "procesado" if necesita_traslado else "procesado sin traslado",
                 destino
             )
         except Exception as e:
