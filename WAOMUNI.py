@@ -651,47 +651,34 @@ def procesar_waom2(driver):
 def procesar_waom3(driver):
     carpeta = RUTAS["WAOM3"]
     reportado = os.path.join(carpeta, "Reportado")
-    en_proceso = os.path.join(carpeta, "EnProceso")
-    duplicados = os.path.join(carpeta, "Duplicados")
     os.makedirs(reportado, exist_ok=True)
-    os.makedirs(en_proceso, exist_ok=True)
 
     grupo_abierto = False
     for archivo in listar_json(carpeta):
         ruta = os.path.join(carpeta, archivo)
-        ruta_proceso = os.path.join(en_proceso, archivo)
         ruta_reportado = os.path.join(reportado, archivo)
         try:
             if os.path.exists(ruta_reportado):
-                mover(ruta, duplicados)
-                log.info("WAOM3 omitido: %s ya figura en Reportado.", archivo)
+                destino = mover(ruta, reportado)
+                log.info(
+                    "WAOM3 omitido: %s ya figura en Reportado; copia archivada en %s.",
+                    archivo, destino
+                )
                 continue
 
-            # Reclamar el archivo: rename falla si ya está en proceso
-            os.rename(ruta, ruta_proceso)
-        except FileNotFoundError:
-            continue
-        except FileExistsError:
-            log.info("WAOM3 omitido: %s ya está en proceso.", archivo)
-            continue
-
-        try:
-            datos = leer_json(ruta_proceso)
+            datos = leer_json(ruta)
             if enviar_con_menciones(driver, GRUPO_DEFECTO_1, datos, abrir=not grupo_abierto):
                 grupo_abierto = True
-                mover(ruta_proceso, reportado)
+                destino = mover(ruta, reportado)
+                log.info("WAOM3 enviado y archivado en Reportado: %s", destino)
             else:
                 log.warning(
-                    "WAOM3 requiere revisión: %s permanece en %s; "
-                    "no se reintentará automáticamente.", archivo, en_proceso
+                    "WAOM3 no se envió: %s permanece en la carpeta raíz; "
+                    "se reintentará automáticamente.", archivo
                 )
             time.sleep(3)
         except Exception as e:
-            log.exception("Error WAOM3: %s", e)
-            log.warning(
-                "El archivo %s permanece en %s para evitar un reenvío automático.",
-                archivo, en_proceso
-            )
+            log.exception("Error WAOM3 (%s): %s", archivo, e)
 
 # ================= FORMULARIO WAPH =================
 
